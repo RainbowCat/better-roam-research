@@ -1,0 +1,48 @@
+/*------------------------------------
+# LEFT SIDEBAR
+------------------------------------*/
+.roam-sidebar-content {
+  /*** LAYOUT ***/
+  /*** APPEARANCE ***/
+  background: var(--bg--left);
+  color: setContrast(var(--bg--left));
+  /*** ANIMATIONS ***/
+}
+.roam-sidebar-content #roam-sidebar-logo {
+  display: none;
+  /* hide logo */
+}
+.roam-sidebar-content .starred-pages-wrapper {
+  /* use border and padding instead of useless divs */
+  border-top: 0.1em solid var(--white);
+}
+.roam-sidebar-content .starred-pages-wrapper > div:nth-child(1) {
+  /* hide horizontal line div */
+  display: none;
+}
+.roam-sidebar-content .starred-pages-wrapper > div:nth-child(2) {
+  /* hide padding div */
+  display: none;
+}
+.roam-sidebar-content .top-row {
+  color: setContrast(var(--bg--left));
+}
+.roam-sidebar-content .log-button {
+  /* general navigations */
+  color: setContrast(var(--bg--left));
+}
+.roam-sidebar-content .log-button .bp3-icon {
+  color: setContrast(var(--bg--left));
+}
+.roam-sidebar-content .starred-pages-wrapper {
+  margin-top: 10px;
+  background: var(--bg--shortcuts);
+  color: setContrast(var(--bg--left));
+}
+.roam-sidebar-content .starred-pages-wrapper > .flex-h-box {
+  display: none;
+}
+.roam-sidebar-content .page {
+  /* left sidebar pages */
+  color: setContrast(var(--bg--left));
+}

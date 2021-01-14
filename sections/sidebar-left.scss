@@ -1,0 +1,57 @@
+/*------------------------------------
+# LEFT SIDEBAR
+------------------------------------*/
+.roam-sidebar-content {
+  /*** LAYOUT ***/
+  #roam-sidebar-logo {
+    display: none; /* hide logo */
+  }
+  .starred-pages-wrapper {
+    /* use border and padding instead of useless divs */
+
+    // border-top: 0.1em solid opacify(var(--white, 0.5)); //TODO
+    border-top: 0.1em solid var(--white);
+
+    > div:nth-child(1) {
+      // maybe use better class selector
+      /* hide horizontal line div */
+      display: none;
+    }
+    > div:nth-child(2) {
+      // maybe use better class selector
+      /* hide padding div */
+      display: none;
+    }
+  }
+
+  /*** APPEARANCE ***/
+  background: var(--bg--left);
+  color: setContrast(var(--bg--left));
+
+  .top-row {
+    // graph name
+    color: setContrast(var(--bg--left));
+  }
+  .log-button {
+    /* general navigations */
+    color: setContrast(var(--bg--left));
+    .bp3-icon {
+      color: setContrast(var(--bg--left));
+    }
+  }
+  .starred-pages-wrapper {
+    margin-top: 10px; // add space from .log-buttons
+    > .flex-h-box {
+      // "★ SHORTCUTS" title
+      display: none;
+    }
+    background: var(--bg--shortcuts); // background of full shotcut section
+    color: setContrast(var(--bg--left));
+  }
+  .page {
+    /* left sidebar pages */
+    color: setContrast(var(--bg--left));
+  }
+
+  /*** ANIMATIONS ***/
+}

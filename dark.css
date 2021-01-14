@@ -46,6 +46,9 @@ body,
   color: var(--c2) !important;
 }
 
+/*------------------------------------
+# GENERAL WORKSPACE
+------------------------------------*/
 html,
 body,
 #app {
@@ -135,6 +138,36 @@ body,
   font-size: 14.5px !important;
 }
 
+.roam-body {
+  background: blue;
+}
+
+.roam-topbar {
+  background: none;
+}
+
+.roam-sidebar-container {
+  background: none !important;
+}
+
+#right-sidebar {
+  background: green;
+}
+
+.roam-body-main {
+  border: 1px solid red;
+  border-bottom: none;
+  border-radius: 2px 2px 0 0;
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  margin: 0px 5px;
+  /* add space to show shadow */
+  box-shadow: 0px 0px 8px 1px #312323;
+  background: linear-gradient(red, blue);
+}
+
+/*------------------------------------
+# TEXT
+------------------------------------*/
 .rm-title-display,
 .rm-title-textarea,
 .roam-log-page h1.level2 {
@@ -181,6 +214,9 @@ h1 {
   color: var(--c1) !important;
 }
 
+/*------------------------------------
+# GLYPH
+------------------------------------*/
 div.roam-article span > a.rm-alias--external:after {
   content: "";
   display: inline-block;

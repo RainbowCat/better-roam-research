@@ -1,0 +1,92 @@
+/*------------------------------------
+# POPUPS
+------------------------------------*/
+// menus
+@mixin popup_menu($focus: none, $hover: none) {
+  background-color: var(--bg--popover) !important;
+  color: setContrast(var(--bg--popover));
+  @if $focus is not none {
+    #{$focus} {
+      background-color: var(--bg--popover-hover) !important;
+    }
+  }
+  @if $hover is not none {
+    #{$hover} {
+      background-color: var(--bg--popover-hover);
+    }
+  }
+}
+// page filter
+@mixin popup_page-filter {
+  color: var(--theme);
+  & > &-content {
+    // background
+    background-color: var(--bg--popover);
+    color: setContrast(var(--bg--popover));
+  }
+  & &-arrow {
+    &-fill {
+      // background
+      fill: var(--bg--popover);
+    }
+    &-border {
+      //tiny border
+      fill: setContrast(var(--bg--popover));
+    }
+  }
+  .bp3-button {
+    // tag selection buttons
+
+    //TODO
+    // $x: var(--bg--popover);
+    // background: radial-gradient($x, lighten($x, 10%));
+
+    background: var(--bg--popover);
+    color: setContrast(var(--bg--popover)) !important;
+    &:hover {
+      color: var(--accent) !important;
+    }
+  }
+}
+
+//TODO are these useful?
+// .bp3-menu-item {
+//   color: initial;
+// }
+// button[type="button"] {
+//   z-index: inherit;
+// }
+
+//menus
+// search bar
+// page filter
+
+.bp3-menu {
+  // code-area language menu
+  @include popup_menu;
+  .bp3-menu-item {
+    color: white; //TODO add mixin?
+  }
+}
+.bp3-elevation-3 {
+  // slash menu
+  @include popup_menu(".dont-unfocus-block[style*=background]");
+}
+//TODO
+/*--- Block References ---*/
+.rm-block-ref {
+  /* linked refs */
+  cursor: alias;
+  border-bottom: 1px solid var(--block-ref-border-bottom);
+}
+.rm-block-ref:hover {
+  background-color: var(--block-ref-hover-bg);
+}
+
+/* page filter */
+.bp3-popover {
+  // popup title colors
+  @include popup_page-filter;
+}
+
+/* tool bar */

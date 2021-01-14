@@ -1,0 +1,62 @@
+/*------------------------------------
+# POPUPS
+------------------------------------*/
+.bp3-menu {
+  background-color: var(--bg--popover) !important;
+  color: setContrast(var(--bg--popover));
+}
+.bp3-menu none {
+  background-color: var(--bg--popover-hover) !important;
+}
+.bp3-menu none {
+  background-color: var(--bg--popover-hover);
+}
+.bp3-menu .bp3-menu-item {
+  color: white;
+}
+
+.bp3-elevation-3 {
+  background-color: var(--bg--popover) !important;
+  color: setContrast(var(--bg--popover));
+}
+.bp3-elevation-3 .dont-unfocus-block[style*=background] {
+  background-color: var(--bg--popover-hover) !important;
+}
+.bp3-elevation-3 none {
+  background-color: var(--bg--popover-hover);
+}
+
+/*--- Block References ---*/
+.rm-block-ref {
+  /* linked refs */
+  cursor: alias;
+  border-bottom: 1px solid var(--block-ref-border-bottom);
+}
+
+.rm-block-ref:hover {
+  background-color: var(--block-ref-hover-bg);
+}
+
+/* page filter */
+.bp3-popover {
+  color: var(--theme);
+}
+.bp3-popover > .bp3-popover-content {
+  background-color: var(--bg--popover);
+  color: setContrast(var(--bg--popover));
+}
+.bp3-popover .bp3-popover-arrow-fill {
+  fill: var(--bg--popover);
+}
+.bp3-popover .bp3-popover-arrow-border {
+  fill: setContrast(var(--bg--popover));
+}
+.bp3-popover .bp3-button {
+  background: var(--bg--popover);
+  color: setContrast(var(--bg--popover)) !important;
+}
+.bp3-popover .bp3-button:hover {
+  color: var(--accent) !important;
+}
+
+/* tool bar */
