@@ -1,13 +1,13 @@
 :root {
-  --theme: #264653;
-  --theme-lighter: #2a9d8f;
-  --theme-darker: #14232a;
-  --neutral: #e9c772;
-  --neutral-lighter: #fdf6ed;
-  --neutral-darker: #f4a261;
-  --accent: #e76f51;
-  --accent-lighter: #e9c772;
-  --accent-darker: #e9c772;
+  --theme: $charcoal;
+  --theme-lighter: $persian-green;
+  --theme-darker: $gunmetal;
+  --neutral: $orange-yellow-crayola;
+  --neutral-lighter: $seashell;
+  --neutral-darker: $sandy-brown;
+  --accent: $burnt-sienna;
+  --accent-lighter: $orange-yellow-crayola;
+  --accent-darker: $orange-yellow-crayola;
   --black: #222222;
   --white: #ffffff;
   --grey: #f5f5f5;

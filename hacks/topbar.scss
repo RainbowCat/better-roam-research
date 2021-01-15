@@ -37,11 +37,10 @@
 //TODO add border / shadow to make search popup standout
 .roam-topbar > .flex-h-box {
   .rm-find-or-create-wrapper {
+    // match size and positions
     input#find-or-create-input:focus,
     .bp3-overlay {
       opacity: 1 !important;
-
-      /* match position */
       position: fixed !important;
       left: var(--searchbar-left);
 
@@ -58,30 +57,40 @@
       width: var(--searchbar-width) !important;
       font-size: var(--searchbar-font);
       padding: var(--searchbar-padding-tb) var(--searchbar-padding-lr); // padding around flace holder text
-      /* if input is empty (no menu) then use all-around border-radius*/
-      &[value=""] {
-        border-radius: 10px;
-      }
-      border-radius: 10px 10px 0px 0px;
-      // border: 1px solid var(--divider-color); /* CRL EDIT */
-      box-shadow: 0 0 0 200vh rgba(0, 0, 0, 0.07);
     }
     .bp3-overlay {
       top: calc(var(--searchbar-top) + var(--searchbar-height) + 2 * var(--searchbar-padding-tb));
-      width: calc(var(--searchbar-width) + 2 * var(--searchbar-padding-lr));
+      width: calc(var(--searchbar-width) + 2 * var(--searchbar-padding-lr) + 2px); // 2px for border
       > .bp3-transition-container {
         transform: none !important; // turn off animation
       }
-      .bp3-popover {
-        // box-shadow: 0 0 0 1px rgba(16, 22, 26, 0.1), 0 2px 4px rgba(16, 22, 26, 0.2),
-        //   0 8px 24px rgba(16, 22, 26, 0.2);
-        box-shadow: none;
-        &,
-        & > .bp3-popover-content,
-        & > .bp3-popover-content > .bp3-menu,
-        & > .bp3-popover-content > .bp3-menu > .rm-menu-item:last-child {
-          border-radius: 0px 0px 10px 10px !important;
-        }
+    }
+    // style
+    input#find-or-create-input:focus {
+      border: 1px solid rgba(0, 0, 0, 0.4);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 0 200vh rgba(0, 0, 0, 0.07);
+
+      // if input is empty (no menu), then make all corners rounded
+      // &[value=""] {
+      //   border-radius: 10px;
+      // }
+      // if there is input, only round top corners to account for dropdown
+      border-radius: 10px 10px 0px 0px;
+    }
+    .bp3-overlay .bp3-popover {
+      border: 1px solid rgba(0, 0, 0, 0.4);
+      border-top: 1px solid rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 0 200vh rgba(0, 0, 0, 0.07);
+
+      // box-shadow: 0 0 0 1px rgba(16, 22, 26, 0.1), 0 2px 4px rgba(16, 22, 26, 0.2),
+      //   0 8px 24px rgba(16, 22, 26, 0.2);
+      box-shadow: none;
+      &,
+      & > .bp3-popover-content,
+      & > .bp3-popover-content > .bp3-menu,
+      & > .bp3-popover-content > .bp3-menu > .rm-menu-item:last-child {
+        border-radius: 0px 0px 10px 10px !important;
       }
     }
   }
@@ -128,23 +137,14 @@
       //   // pointer-events: hover;
     }
   }
-  // filter
-  // .bp3-icon-filter {
-  //   width: var(--icons-size);
-  //   height: var(--icons-size);
-  //   border-radius: 3px;
-  //   &:before {
-  //     position: relative;
-  //     top: 3px;
-  //     left: 3px;
-  //   }
-  // }
+
   // other buttons
   .bp3-button {
     height: var(--icons-size);
     width: var(--icons-size);
     margin: 0px !important;
   }
+
   //icon color
   [class~="bp3-icon"],
   .bp3-button.bp3-minimal {
