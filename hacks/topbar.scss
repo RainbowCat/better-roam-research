@@ -119,11 +119,11 @@
       cursor: pointer;
     }
     .bp3-icon-search.search-icon {
-      // background: red;
-      border-radius: 3px;
+      //   // background: red;
+      //   border-radius: 3px;
       padding: 4px;
       margin: 0px !important;
-      // pointer-events: hover;
+      //   // pointer-events: hover;
     }
   }
   // filter
@@ -150,8 +150,11 @@
       background: transparent;
     }
   }
-  [class~="bp3-icon"]:not(.bp3-icon-filter),
+  .rm-find-or-create-wrapper,
+  [class~="bp3-icon"]:not(.bp3-icon-filter):not(.bp3-icon-search),
   .bp3-button.bp3-minimal {
+    border-radius: 3px;
+    transition: none;
     background: var(--icons-regular) !important;
     &:hover {
       background: var(--icons-hover) !important;
