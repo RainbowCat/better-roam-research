@@ -10,6 +10,9 @@
   --searchbar-width: 500px;
   --searchbar-left: 55vw;
   --searchbar-top: 27vh;
+  --searchbar-padding-tb: 10px;
+  --searchbar-padding-lr: 20px;
+  --searchbar-font: 20px;
 }
 :root {
   --icons-regular: red;
@@ -36,8 +39,7 @@
     input#find-or-create-input:focus,
     .bp3-overlay {
       opacity: 1 !important;
-      /* match size */
-      width: var(--searchbar-width) !important;
+
       /* match position */
       position: fixed !important;
       left: var(--searchbar-left);
@@ -49,23 +51,36 @@
       transform: translate(-50%, 0);
     }
     input#find-or-create-input:focus {
+      box-sizing: content-box;
       top: var(--searchbar-top);
-      height: var(--searchbar-height);
-      padding: 15px; // padding around flace holder text
+      height: var(--searchbar-height) !important;
+      width: var(--searchbar-width) !important;
+      font-size: var(--searchbar-font);
+      padding: var(--searchbar-padding-tb) var(--searchbar-padding-lr); // padding around flace holder text
       /* if input is empty (no menu) then use all-around border-radius*/
       &[value=""] {
         border-radius: 10px;
       }
-      border-radius: 10px 10px 0px 0px; /* CRL EDIT */
+      border-radius: 10px 10px 0px 0px;
       // border: 1px solid var(--divider-color); /* CRL EDIT */
       box-shadow: 0 0 0 200vh rgba(0, 0, 0, 0.07);
     }
     .bp3-overlay {
-      top: calc(var(--searchbar-top) + var(--searchbar-height));
+      top: calc(var(--searchbar-top) + var(--searchbar-height) + 2 * var(--searchbar-padding-tb));
+      width: calc(var(--searchbar-width) + 2 * var(--searchbar-padding-lr));
       > .bp3-transition-container {
         transform: none !important; // turn off animation
       }
-      box-shadow: none !important;
+      .bp3-popover {
+        // box-shadow: 0 0 0 1px rgba(16, 22, 26, 0.1), 0 2px 4px rgba(16, 22, 26, 0.2),
+        //   0 8px 24px rgba(16, 22, 26, 0.2);
+        box-shadow: none;
+        &,
+        & > .bp3-popover-content,
+        & > .bp3-popover-content > .bp3-menu {
+          border-radius: 0px 0px 10px 10px !important;
+        }
+      }
     }
   }
 }

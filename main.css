@@ -785,6 +785,9 @@ span.checkmark {
   --searchbar-width: 500px;
   --searchbar-left: 55vw;
   --searchbar-top: 27vh;
+  --searchbar-padding-tb: 10px;
+  --searchbar-padding-lr: 20px;
+  --searchbar-font: 20px;
 }
 
 :root {
@@ -806,8 +809,6 @@ span.checkmark {
 .roam-topbar > .flex-h-box .rm-find-or-create-wrapper input#find-or-create-input:focus,
 .roam-topbar > .flex-h-box .rm-find-or-create-wrapper .bp3-overlay {
   opacity: 1 !important;
-  /* match size */
-  width: var(--searchbar-width) !important;
   /* match position */
   position: fixed !important;
   left: var(--searchbar-left);
@@ -817,23 +818,31 @@ span.checkmark {
   transform: translate(-50%, 0);
 }
 .roam-topbar > .flex-h-box .rm-find-or-create-wrapper input#find-or-create-input:focus {
+  box-sizing: content-box;
   top: var(--searchbar-top);
-  height: var(--searchbar-height);
-  padding: 15px;
+  height: var(--searchbar-height) !important;
+  width: var(--searchbar-width) !important;
+  font-size: var(--searchbar-font);
+  padding: var(--searchbar-padding-tb) var(--searchbar-padding-lr);
   /* if input is empty (no menu) then use all-around border-radius*/
   border-radius: 10px 10px 0px 0px;
-  /* CRL EDIT */
   box-shadow: 0 0 0 200vh rgba(0, 0, 0, 0.07);
 }
 .roam-topbar > .flex-h-box .rm-find-or-create-wrapper input#find-or-create-input:focus[value=""] {
   border-radius: 10px;
 }
 .roam-topbar > .flex-h-box .rm-find-or-create-wrapper .bp3-overlay {
-  top: calc(var(--searchbar-top) + var(--searchbar-height));
-  box-shadow: none !important;
+  top: calc(var(--searchbar-top) + var(--searchbar-height) + 2 * var(--searchbar-padding-tb));
+  width: calc(var(--searchbar-width) + 2 * var(--searchbar-padding-lr));
 }
 .roam-topbar > .flex-h-box .rm-find-or-create-wrapper .bp3-overlay > .bp3-transition-container {
   transform: none !important;
+}
+.roam-topbar > .flex-h-box .rm-find-or-create-wrapper .bp3-overlay .bp3-popover {
+  box-shadow: none;
+}
+.roam-topbar > .flex-h-box .rm-find-or-create-wrapper .bp3-overlay .bp3-popover, .roam-topbar > .flex-h-box .rm-find-or-create-wrapper .bp3-overlay .bp3-popover > .bp3-popover-content, .roam-topbar > .flex-h-box .rm-find-or-create-wrapper .bp3-overlay .bp3-popover > .bp3-popover-content > .bp3-menu {
+  border-radius: 0px 0px 10px 10px !important;
 }
 
 /* make all elements look like a button */
