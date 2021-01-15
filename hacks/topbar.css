@@ -111,6 +111,7 @@
 .roam-topbar .flex-h-box .bp3-button {
   height: var(--icons-size);
   width: var(--icons-size);
+  margin: 0px !important;
 }
 .roam-topbar .flex-h-box [class~=bp3-icon]:before,
 .roam-topbar .flex-h-box .bp3-button.bp3-minimal:before {

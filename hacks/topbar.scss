@@ -34,6 +34,7 @@
 }
 
 /* make search popover */
+//TODO add border / shadow to make search popup standout
 .roam-topbar > .flex-h-box {
   .rm-find-or-create-wrapper {
     input#find-or-create-input:focus,
@@ -142,6 +143,7 @@
   .bp3-button {
     height: var(--icons-size);
     width: var(--icons-size);
+    margin: 0px !important;
   }
   //icon color
   [class~="bp3-icon"],
