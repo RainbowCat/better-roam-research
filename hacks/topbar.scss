@@ -77,7 +77,8 @@
         box-shadow: none;
         &,
         & > .bp3-popover-content,
-        & > .bp3-popover-content > .bp3-menu {
+        & > .bp3-popover-content > .bp3-menu,
+        & > .bp3-popover-content > .bp3-menu > .rm-menu-item:last-child {
           border-radius: 0px 0px 10px 10px !important;
         }
       }
