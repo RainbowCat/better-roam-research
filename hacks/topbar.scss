@@ -5,73 +5,41 @@
 ------------------------------------*/
 .roam-topbar {
   /*** LAYOUT ***/
-  --searchbar-height: minmax(45px, 5vh);
+  --searchbar-height: 45px;
   /*** AESTHETICS ***/
   --searchbar-width: 500px;
   --searchbar-left: 55vw;
   --searchbar-top: 27vh;
 }
+:root {
+  --icons-regular: red;
+  --icons-hover: blue;
+  --icons-size: 24px;
+}
+
+// style topbar
+.roam-topbar {
+  background: #14232a;
+  color: white;
+}
 
 // HACK
+// remove useless divs
 // TODO keep the one between left sidebar icon and other icons
 .roam-topbar .flex-h-box > div[style^="flex"]:not([class]) {
-  /* remove useless divs */
   display: none;
 }
 
-/*** LAYOUT ***/
-.roam-topbar .flex-h-box {
-  justify-content: center; // icons placement
-
-  // make all elements look like a button
-  > div,
-  > span {
-    height: 24px;
-    width: 24px;
-    margin: 3px;
-  }
-  .rm-find-or-create-wrapper {
-    flex: unset !important;
-    width: 24px;
-  }
-  [class|="bp3-icon"],
-  [class|="bp3-icon"] > *,
-  .rm-saving-icon {
-    height: 24px;
-    width: 24px;
-    margin: 0px;
-    padding: 0px;
-    border-radius: 3px;
-    place-self: center;
-  }
-  .rm-saving-inner-icon {
-    height: 10px !important;
-    width: 10px !important;
-  }
-
-  input#find-or-create-input {
-    padding: 0px;
-    cursor: pointer;
-  }
-  .search-icon,
-  .bp3-icon-search {
-    padding: 4px;
-    margin: 0px !important;
-    pointer-events: none;
-    &:before {
-      pointer-events: none;
-    }
-  }
-
-  // make search popover
+/* make search popover */
+.roam-topbar > .flex-h-box {
   .rm-find-or-create-wrapper {
     input#find-or-create-input:focus,
     .bp3-overlay {
+      opacity: 1 !important;
       /* match size */
-      width: var(--searchbar-width);
+      width: var(--searchbar-width) !important;
       /* match position */
       position: fixed !important;
-      top: var(--searchbar-top);
       left: var(--searchbar-left);
 
       /* place at front of page */
@@ -81,23 +49,97 @@
       transform: translate(-50%, 0);
     }
     input#find-or-create-input:focus {
+      top: var(--searchbar-top);
       height: var(--searchbar-height);
+      padding: 15px; // padding around flace holder text
+      /* if input is empty (no menu) then use all-around border-radius*/
+      &[value=""] {
+        border-radius: 10px;
+      }
+      border-radius: 10px 10px 0px 0px; /* CRL EDIT */
+      // border: 1px solid var(--divider-color); /* CRL EDIT */
+      box-shadow: 0 0 0 200vh rgba(0, 0, 0, 0.07);
     }
     .bp3-overlay {
       top: calc(var(--searchbar-top) + var(--searchbar-height));
-      .bp3-transition-container {
+      > .bp3-transition-container {
         transform: none !important; // turn off animation
       }
+      box-shadow: none !important;
     }
   }
 }
 
-/*** APPEARANCE ***/
-.roam-topbar {
-  background: #14232a;
-  color: white;
-}
+/* make all elements look like a button */
+.roam-topbar .flex-h-box {
+  justify-content: center; // icons placement
 
-.roam-topbar .flex-h-box input#find-or-create-input:focus {
-  padding: 15px; // padding around flace holder text
+  > div,
+  > span {
+    height: var(--icons-size);
+    width: var(--icons-size);
+    margin: 5px; //icons margin
+  }
+  .rm-saving-icon {
+    height: var(--icons-size);
+    width: var(--icons-size);
+    margin: 0px;
+    padding: 0px;
+    border-radius: 3px;
+  }
+  .rm-saving-inner-icon {
+    height: 10px !important;
+    width: 10px !important;
+  }
+  // search
+  .rm-find-or-create-wrapper {
+    flex: unset !important;
+    input#find-or-create-input {
+      opacity: 0;
+      z-index: 10000; /* bring in front of icon to keep clickable */
+      width: var(--icons-size) !important;
+      height: var(--icons-size) !important;
+      padding: 0px;
+      margin: 0px;
+      cursor: pointer;
+    }
+    .bp3-icon-search.search-icon {
+      // background: red;
+      border-radius: 3px;
+      padding: 4px;
+      margin: 0px !important;
+      // pointer-events: hover;
+    }
+  }
+  // filter
+  // .bp3-icon-filter {
+  //   width: var(--icons-size);
+  //   height: var(--icons-size);
+  //   border-radius: 3px;
+  //   &:before {
+  //     position: relative;
+  //     top: 3px;
+  //     left: 3px;
+  //   }
+  // }
+  // other buttons
+  .bp3-button {
+    height: var(--icons-size);
+    width: var(--icons-size);
+  }
+  //icon color
+  [class~="bp3-icon"],
+  .bp3-button.bp3-minimal {
+    &:before {
+      color: white;
+      background: transparent;
+    }
+  }
+  [class~="bp3-icon"]:not(.bp3-icon-filter),
+  .bp3-button.bp3-minimal {
+    background: var(--icons-regular) !important;
+    &:hover {
+      background: var(--icons-hover) !important;
+    }
+  }
 }

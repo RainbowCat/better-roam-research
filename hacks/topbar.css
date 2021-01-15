@@ -5,89 +5,115 @@
 ------------------------------------*/
 .roam-topbar {
   /*** LAYOUT ***/
-  --searchbar-height: minmax(45px, 5vh);
+  --searchbar-height: 45px;
   /*** AESTHETICS ***/
   --searchbar-width: 500px;
   --searchbar-left: 55vw;
   --searchbar-top: 27vh;
 }
 
+:root {
+  --icons-regular: red;
+  --icons-hover: blue;
+  --icons-size: 24px;
+}
+
+.roam-topbar {
+  background: #14232a;
+  color: white;
+}
+
 .roam-topbar .flex-h-box > div[style^=flex]:not([class]) {
-  /* remove useless divs */
   display: none;
 }
 
-/*** LAYOUT ***/
-.roam-topbar .flex-h-box {
-  justify-content: center;
-}
-.roam-topbar .flex-h-box > div,
-.roam-topbar .flex-h-box > span {
-  height: 24px;
-  width: 24px;
-  margin: 3px;
-}
-.roam-topbar .flex-h-box .rm-find-or-create-wrapper {
-  flex: unset !important;
-  width: 24px;
-}
-.roam-topbar .flex-h-box [class|=bp3-icon],
-.roam-topbar .flex-h-box [class|=bp3-icon] > *,
-.roam-topbar .flex-h-box .rm-saving-icon {
-  height: 24px;
-  width: 24px;
-  margin: 0px;
-  padding: 0px;
-  border-radius: 3px;
-  place-self: center;
-}
-.roam-topbar .flex-h-box .rm-saving-inner-icon {
-  height: 10px !important;
-  width: 10px !important;
-}
-.roam-topbar .flex-h-box input#find-or-create-input {
-  padding: 0px;
-  cursor: pointer;
-}
-.roam-topbar .flex-h-box .search-icon,
-.roam-topbar .flex-h-box .bp3-icon-search {
-  padding: 4px;
-  margin: 0px !important;
-  pointer-events: none;
-}
-.roam-topbar .flex-h-box .search-icon:before,
-.roam-topbar .flex-h-box .bp3-icon-search:before {
-  pointer-events: none;
-}
-.roam-topbar .flex-h-box .rm-find-or-create-wrapper input#find-or-create-input:focus,
-.roam-topbar .flex-h-box .rm-find-or-create-wrapper .bp3-overlay {
+/* make search popover */
+.roam-topbar > .flex-h-box .rm-find-or-create-wrapper input#find-or-create-input:focus,
+.roam-topbar > .flex-h-box .rm-find-or-create-wrapper .bp3-overlay {
+  opacity: 1 !important;
   /* match size */
-  width: var(--searchbar-width);
+  width: var(--searchbar-width) !important;
   /* match position */
   position: fixed !important;
-  top: var(--searchbar-top);
   left: var(--searchbar-left);
   /* place at front of page */
   z-index: 999999;
   /* center */
   transform: translate(-50%, 0);
 }
-.roam-topbar .flex-h-box .rm-find-or-create-wrapper input#find-or-create-input:focus {
+.roam-topbar > .flex-h-box .rm-find-or-create-wrapper input#find-or-create-input:focus {
+  top: var(--searchbar-top);
   height: var(--searchbar-height);
+  padding: 15px;
+  /* if input is empty (no menu) then use all-around border-radius*/
+  border-radius: 10px 10px 0px 0px;
+  /* CRL EDIT */
+  box-shadow: 0 0 0 200vh rgba(0, 0, 0, 0.07);
 }
-.roam-topbar .flex-h-box .rm-find-or-create-wrapper .bp3-overlay {
+.roam-topbar > .flex-h-box .rm-find-or-create-wrapper input#find-or-create-input:focus[value=""] {
+  border-radius: 10px;
+}
+.roam-topbar > .flex-h-box .rm-find-or-create-wrapper .bp3-overlay {
   top: calc(var(--searchbar-top) + var(--searchbar-height));
+  box-shadow: none !important;
 }
-.roam-topbar .flex-h-box .rm-find-or-create-wrapper .bp3-overlay .bp3-transition-container {
+.roam-topbar > .flex-h-box .rm-find-or-create-wrapper .bp3-overlay > .bp3-transition-container {
   transform: none !important;
 }
 
-/*** APPEARANCE ***/
-.roam-topbar {
-  background: #14232a;
-  color: white;
+/* make all elements look like a button */
+.roam-topbar .flex-h-box {
+  justify-content: center;
 }
-
-.roam-topbar .flex-h-box input#find-or-create-input:focus {
-  padding: 15px;
+.roam-topbar .flex-h-box > div,
+.roam-topbar .flex-h-box > span {
+  height: var(--icons-size);
+  width: var(--icons-size);
+  margin: 5px;
+}
+.roam-topbar .flex-h-box .rm-saving-icon {
+  height: var(--icons-size);
+  width: var(--icons-size);
+  margin: 0px;
+  padding: 0px;
+  border-radius: 3px;
+}
+.roam-topbar .flex-h-box .rm-saving-inner-icon {
+  height: 10px !important;
+  width: 10px !important;
+}
+.roam-topbar .flex-h-box .rm-find-or-create-wrapper {
+  flex: unset !important;
+}
+.roam-topbar .flex-h-box .rm-find-or-create-wrapper input#find-or-create-input {
+  opacity: 0;
+  z-index: 10000;
+  /* bring in front of icon to keep clickable */
+  width: var(--icons-size) !important;
+  height: var(--icons-size) !important;
+  padding: 0px;
+  margin: 0px;
+  cursor: pointer;
+}
+.roam-topbar .flex-h-box .rm-find-or-create-wrapper .bp3-icon-search.search-icon {
+  border-radius: 3px;
+  padding: 4px;
+  margin: 0px !important;
+}
+.roam-topbar .flex-h-box .bp3-button {
+  height: var(--icons-size);
+  width: var(--icons-size);
+}
+.roam-topbar .flex-h-box [class~=bp3-icon]:before,
+.roam-topbar .flex-h-box .bp3-button.bp3-minimal:before {
+  color: white;
+  background: transparent;
+}
+.roam-topbar .flex-h-box [class~=bp3-icon]:not(.bp3-icon-filter),
+.roam-topbar .flex-h-box .bp3-button.bp3-minimal {
+  background: var(--icons-regular) !important;
+}
+.roam-topbar .flex-h-box [class~=bp3-icon]:not(.bp3-icon-filter):hover,
+.roam-topbar .flex-h-box .bp3-button.bp3-minimal:hover {
+  background: var(--icons-hover) !important;
 }
