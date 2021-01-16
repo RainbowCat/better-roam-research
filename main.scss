@@ -1,3 +1,5 @@
+@import "utils";
+
 @import "./palettes/light-palette.scss";
 
 @media (prefers-color-scheme: dark) {
@@ -10,23 +12,20 @@
   --leftbar_width: 200px;
 
   // background colors
-  --background--topbar: var(--theme-darker);
-  --background--left: var(--theme-darker);
-  --background--main: var(--theme-darker);
-  --background--right: var(--theme);
+  --bg--topbar: var(--theme-darker);
+  --bg--left: var(--theme-darker);
+  --bg--main: var(--theme-darker);
+  --bg--right: var(--theme);
 
-  --background--shortcuts: linear-gradient(
-    --background--left 30%,
-    var(--theme-lighter 90%, --background--left)
-  );
+  --bg--shortcuts: linear-gradient(--bg--left 30%, var(--theme-lighter 90%, --bg--left));
 
-  --background--block-regular: var(--theme-darker);
-  --background--block-highlight: var(--accent-lighter);
-  --background--checkmark-checked: var(--grey);
-  --background--checkmark-nonchecked: var(--accent);
-  --background--popover: var(--theme-darker);
-  --background--popover-hover: var(--accent-lighter);
-  --background--menus: var(--theme-darker);
+  --bg--block-regular: var(--theme-darker);
+  --bg--block-highlight: var(--accent-lighter);
+  --bg--checkmark-checked: var(--grey);
+  --bg--checkmark-nonchecked: var(--accent);
+  --bg--popover: var(--theme-darker);
+  --bg--popover-hover: var(--accent-lighter);
+  --bg--menus: var(--theme-darker);
 
   // text colors
   --textcolor--pagelinks: var(--accent-lighter);
@@ -55,7 +54,7 @@
   --hover--attribute: var(--accent-lighter);
 
   --textcolor--highlight: var(--white);
-  --background--highlight: var(--accent);
+  --bg--highlight: var(--accent);
 
   --color--icons: var(--white);
   --color--bullet: var(--white);
@@ -65,6 +64,13 @@
   --border--nestline: var(--white);
 }
 
+@import "./sections/topbar.scss";
+@import "./sections/sidebar-left.scss";
+@import "./sections/sidebar-right.scss";
+@import "./sections/general-workspace.scss";
+
+@import "./hacks/layout.scss";
+
 @import "./components/style.scss";
 @import "./components/bullets.scss";
 @import "./components/tags.scss";
@@ -72,7 +78,5 @@
 @import "./components/datepicker.scss";
 
 @import "./hacks/fixed-text.scss";
-@import "./hacks/layout.scss";
 @import "./hacks/glyph.scss";
-@import "./hacks/topbar.scss";
 @import "./hacks/shift-bullets.scss";

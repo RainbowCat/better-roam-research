@@ -1,18 +1,42 @@
-/* Error: $color: var(--accent-darker) is not a color.
- *    ,
- * 20 |   @include setBorder(opacify(var(--accent-darker), 0.6), 5);
- *    |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *    '
- *   components/blocks.scss 20:22  block-focused()
- *   components/blocks.scss 44:5   root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: $color: var(--accent-darker) is not a color.\a    \2577 \a 20 \2502    @include setBorder(opacify(var(--accent-darker), 0.6), 5);\a    \2502                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   components/blocks.scss 20:22  block-focused()\a   components/blocks.scss 44:5   root stylesheet";
+/*------------------------------------
+# BLOCKS
+------------------------------------*/
+/* block highlights */
+/* block highlights */
+.rm-block, .roam-block, .roam-block-container {
+  /* regular block */
+  /* focused block */
+  /* selected block in main edit area */
+  /* selected block in linked referenced */
 }
+.rm-block .rm-not-focused, .roam-block .rm-not-focused, .roam-block-container .rm-not-focused {
+  background-color: transparent;
+}
+.rm-block .rm-focused, .roam-block .rm-focused, .roam-block-container .rm-focused {
+  padding: 0px;
+  /* i.e. when tyging inside */
+}
+.rm-block .block-highlight-blue, .roam-block .block-highlight-blue, .roam-block-container .block-highlight-blue {
+  /* selected block in main edit area */
+  background-color: var(--accent-darker);
+}
+.rm-block .block-highlight-blue, .roam-block .block-highlight-blue, .roam-block-container .block-highlight-blue {
+  /* block selection */
+  background-color: var(--block-highlight);
+}
+.rm-block .block-highlight-yellow, .roam-block .block-highlight-yellow, .roam-block-container .block-highlight-yellow {
+  /* block highlight */
+  /* selected block in linked referenced */
+  background-color: var(--block-highlight-bg);
+}
+.rm-block .rm-embed-container, .roam-block .rm-embed-container, .roam-block-container .rm-embed-container {
+  /* embed block highlight */
+  /* embed block highlight */
+  background-color: var(--embed-container-bg);
+}
+
+.block-highlight-blue {
+  background-color: var(--selection-color) !important;
+}
+
+/*--- Block References ---*/

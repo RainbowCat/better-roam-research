@@ -1,57 +1,86 @@
 /*------------------------------------
 # LEFT SIDEBAR
 ------------------------------------*/
-.roam-sidebar-content {
+.roam-body .roam-app .roam-sidebar-content {
+  --bg--left: black;
+  --bg--shortcuts: linear-gradient(green, black);
+  --text: white;
+}
+
+.roam-body .roam-app .roam-sidebar-content {
   /*** LAYOUT ***/
+
+  // hide logo
   #roam-sidebar-logo {
-    display: none; /* hide logo */
+    display: none;
   }
+  // paddings
+  padding: 0 !important;
+  > div:not(.log-button):not(:first-child) {
+    padding: 0 !important;
+  }
+  > div:first-child {
+    padding-bottom: 18px !important;
+  }
+  div {
+    line-height: 1.2 !important;
+  }
+
   .starred-pages-wrapper {
-    /* use border and padding instead of useless divs */
+    // style division bar
+
+    // maybe if use border and padding instead of useless divs
+    // margin-top: 10px; // add space from .log-buttons
+    // padding-top: 10px; // add space before pages
 
     // border-top: 0.1em solid opacify(var(--white, 0.5)); //TODO
-    border-top: 0.1em solid var(--white);
-
+    // border-top: 0.1em solid var(--white);
+    // > div:nth-child(1) {
+    // horizontal line div
+    // display: none;
+    // }
     > div:nth-child(1) {
       // maybe use better class selector
-      /* hide horizontal line div */
-      display: none;
+      flex: 0 0 1px;
+      background-color: white !important; // todo make variable
+      margin: 10px 20px; // todo make variable
     }
     > div:nth-child(2) {
       // maybe use better class selector
-      /* hide padding div */
+      // hide padding div
       display: none;
     }
+    > .flex-h-box {
+      // hide "★ SHORTCUTS" title
+      display: none;
+    }
+  }
+
+  // paddings
+  .log-button,
+  .starred-pages-wrapper .starred-pages .page {
+    padding: 6px 24px 6px !important;
+  }
+  .shortcut {
+    padding: 14px 24px 0;
+  }
+  .top-row {
+    padding: 12px 0 0 20px;
   }
 
   /*** APPEARANCE ***/
   background: var(--bg--left);
-  color: setContrast(var(--bg--left));
 
-  .top-row {
-    // graph name
-    color: setContrast(var(--bg--left));
-  }
-  .log-button {
-    /* general navigations */
-    color: setContrast(var(--bg--left));
-    .bp3-icon {
-      color: setContrast(var(--bg--left));
+  .top-row .rm-db-title,
+  .log-button,
+  .starred-pages-wrapper .starred-pages .page {
+    background: transparent;
+    color: pink !important; // todo make variable
+    &:hover {
+      background: transparent !important;
+      color: red !important; //todo make variable
     }
   }
-  .starred-pages-wrapper {
-    margin-top: 10px; // add space from .log-buttons
-    > .flex-h-box {
-      // "★ SHORTCUTS" title
-      display: none;
-    }
-    background: var(--bg--shortcuts); // background of full shotcut section
-    color: setContrast(var(--bg--left));
-  }
-  .page {
-    /* left sidebar pages */
-    color: setContrast(var(--bg--left));
-  }
-
-  /*** ANIMATIONS ***/
 }
+
+/*** ANIMATIONS ***/

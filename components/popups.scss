@@ -1,92 +1,69 @@
 /*------------------------------------
 # POPUPS
 ------------------------------------*/
-// menus
-@mixin popup_menu($focus: none, $hover: none) {
-  background-color: var(--bg--popover) !important;
-  color: setContrast(var(--bg--popover));
-  @if $focus is not none {
-    #{$focus} {
-      background-color: var(--bg--popover-hover) !important;
-    }
-  }
-  @if $hover is not none {
-    #{$hover} {
-      background-color: var(--bg--popover-hover);
-    }
-  }
+
+:root {
+  --bg--popover: pink;
+  --bg--popover-hover: red;
+  --bg--popover-contrast: white;
 }
-// page filter
-@mixin popup_page-filter {
+
+// all popoevers
+.bp3-popover {
   color: var(--theme);
+  background: var(--bg--popover);
   & > &-content {
-    // background
     background-color: var(--bg--popover);
-    color: setContrast(var(--bg--popover));
+    color: var(--bg--popover-contrast);
   }
   & &-arrow {
     &-fill {
-      // background
-      fill: var(--bg--popover);
+      fill: var(--bg--popover); // background
     }
     &-border {
-      //tiny border
-      fill: setContrast(var(--bg--popover));
+      fill: var(--bg--popover-contrast); //tiny border
     }
   }
   .bp3-button {
-    // tag selection buttons
-
-    //TODO
-    // $x: var(--bg--popover);
-    // background: radial-gradient($x, lighten($x, 10%));
-
-    background: var(--bg--popover);
-    color: setContrast(var(--bg--popover)) !important;
+    // tag selection buttons in page filter
+    background: radial-gradient(var(--bg--popover), white); // add dimension to buttons
+    color: var(--bg--popover-contrast);
     &:hover {
-      color: var(--accent) !important;
+      color: blue !important; //TODO make variable
+      background: radial-gradient(var(--bg--popover), black);
     }
   }
 }
 
-//TODO are these useful?
-// .bp3-menu-item {
-//   color: initial;
-// }
-// button[type="button"] {
-//   z-index: inherit;
-// }
-
-//menus
-// search bar
-// page filter
-
 .bp3-menu {
   // code-area language menu
-  @include popup_menu;
+  background-color: var(--bg--popover) !important;
+  color: var(--bg--popover-contrast);
   .bp3-menu-item {
-    color: white; //TODO add mixin?
+    color: white;
   }
 }
 .bp3-elevation-3 {
   // slash menu
-  @include popup_menu(".dont-unfocus-block[style*=background]");
-}
-//TODO
-/*--- Block References ---*/
-.rm-block-ref {
-  /* linked refs */
-  cursor: alias;
-  border-bottom: 1px solid var(--block-ref-border-bottom);
-}
-.rm-block-ref:hover {
-  background-color: var(--block-ref-hover-bg);
+  background-color: var(--bg--popover) !important;
+  color: var(--bg--popover-contrast);
+  .dont-unfocus-block[style*="background"] {
+    background-color: var(--bg--popover-hover) !important;
+  }
 }
 
-/* page filter */
-.bp3-popover {
-  // popup title colors
-  @include popup_page-filter;
+// dunno yet
+.bp3-elevation-3,
+.confirmation-content-dialog,
+.bp3-dialog {
+  background: var(--popup-background-color) !important;
 }
-
-/* tool bar */
+.bp3-elevation-3 {
+  // Selection in the menus
+  div.dont-unfocus-block[style*="background"] {
+    background: var(--secondary-background-color) !important;
+  }
+}
+.bp3-dialog h2.level2 {
+  color: var(--c1) !important;
+}

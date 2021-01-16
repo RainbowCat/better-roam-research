@@ -17,7 +17,7 @@ $rm-block-selector: ".rm-block, .roam-block, .roam-block-container";
 @mixin block_focused {
   //todo
   padding: 0px;
-  @include setBorder(opacify(var(--accent-darker), 0.6), 5);
+  // @include setBorder(opacify(var(--accent-darker), 0.6), 5);
 }
 
 @mixin block_selected-main {
@@ -64,3 +64,19 @@ $rm-block-selector: ".rm-block, .roam-block, .roam-block-container";
     @include block_selected-embed;
   }
 }
+
+// Selection
+.block-highlight-blue {
+  background-color: var(--selection-color) !important;
+}
+
+//TODO
+/*--- Block References ---*/
+// .rm-block-ref {
+//   /* linked refs */
+//   cursor: alias;
+//   border-bottom: 1px solid var(--block-ref-border-bottom);
+// }
+// .rm-block-ref:hover {
+//   background-color: var(--block-ref-hover-bg);
+// }

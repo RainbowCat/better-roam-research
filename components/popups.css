@@ -1,15 +1,38 @@
 /*------------------------------------
 # POPUPS
 ------------------------------------*/
+:root {
+  --bg--popover: pink;
+  --bg--popover-hover: red;
+  --bg--popover-contrast: white;
+}
+
+.bp3-popover {
+  color: var(--theme);
+  background: var(--bg--popover);
+}
+.bp3-popover > .bp3-popover-content {
+  background-color: var(--bg--popover);
+  color: var(--bg--popover-contrast);
+}
+.bp3-popover .bp3-popover-arrow-fill {
+  fill: var(--bg--popover);
+}
+.bp3-popover .bp3-popover-arrow-border {
+  fill: var(--bg--popover-contrast);
+}
+.bp3-popover .bp3-button {
+  background: radial-gradient(var(--bg--popover), white);
+  color: var(--bg--popover-contrast);
+}
+.bp3-popover .bp3-button:hover {
+  color: blue !important;
+  background: radial-gradient(var(--bg--popover), black);
+}
+
 .bp3-menu {
   background-color: var(--bg--popover) !important;
-  color: setContrast(var(--bg--popover));
-}
-.bp3-menu none {
-  background-color: var(--bg--popover-hover) !important;
-}
-.bp3-menu none {
-  background-color: var(--bg--popover-hover);
+  color: var(--bg--popover-contrast);
 }
 .bp3-menu .bp3-menu-item {
   color: white;
@@ -17,46 +40,22 @@
 
 .bp3-elevation-3 {
   background-color: var(--bg--popover) !important;
-  color: setContrast(var(--bg--popover));
+  color: var(--bg--popover-contrast);
 }
 .bp3-elevation-3 .dont-unfocus-block[style*=background] {
   background-color: var(--bg--popover-hover) !important;
 }
-.bp3-elevation-3 none {
-  background-color: var(--bg--popover-hover);
+
+.bp3-elevation-3,
+.confirmation-content-dialog,
+.bp3-dialog {
+  background: var(--popup-background-color) !important;
 }
 
-/*--- Block References ---*/
-.rm-block-ref {
-  /* linked refs */
-  cursor: alias;
-  border-bottom: 1px solid var(--block-ref-border-bottom);
+.bp3-elevation-3 div.dont-unfocus-block[style*=background] {
+  background: var(--secondary-background-color) !important;
 }
 
-.rm-block-ref:hover {
-  background-color: var(--block-ref-hover-bg);
+.bp3-dialog h2.level2 {
+  color: var(--c1) !important;
 }
-
-/* page filter */
-.bp3-popover {
-  color: var(--theme);
-}
-.bp3-popover > .bp3-popover-content {
-  background-color: var(--bg--popover);
-  color: setContrast(var(--bg--popover));
-}
-.bp3-popover .bp3-popover-arrow-fill {
-  fill: var(--bg--popover);
-}
-.bp3-popover .bp3-popover-arrow-border {
-  fill: setContrast(var(--bg--popover));
-}
-.bp3-popover .bp3-button {
-  background: var(--bg--popover);
-  color: setContrast(var(--bg--popover)) !important;
-}
-.bp3-popover .bp3-button:hover {
-  color: var(--accent) !important;
-}
-
-/* tool bar */

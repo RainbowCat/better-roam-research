@@ -1,48 +1,62 @@
 /*------------------------------------
 # LEFT SIDEBAR
 ------------------------------------*/
-.roam-sidebar-content {
+.roam-body .roam-app .roam-sidebar-content {
+  --bg--left: black;
+  --bg--shortcuts: linear-gradient(green, black);
+  --text: white;
+}
+
+.roam-body .roam-app .roam-sidebar-content {
   /*** LAYOUT ***/
+  padding: 0 !important;
   /*** APPEARANCE ***/
   background: var(--bg--left);
-  color: setContrast(var(--bg--left));
-  /*** ANIMATIONS ***/
 }
-.roam-sidebar-content #roam-sidebar-logo {
-  display: none;
-  /* hide logo */
-}
-.roam-sidebar-content .starred-pages-wrapper {
-  /* use border and padding instead of useless divs */
-  border-top: 0.1em solid var(--white);
-}
-.roam-sidebar-content .starred-pages-wrapper > div:nth-child(1) {
-  /* hide horizontal line div */
+.roam-body .roam-app .roam-sidebar-content #roam-sidebar-logo {
   display: none;
 }
-.roam-sidebar-content .starred-pages-wrapper > div:nth-child(2) {
-  /* hide padding div */
+.roam-body .roam-app .roam-sidebar-content > div:not(.log-button):not(:first-child) {
+  padding: 0 !important;
+}
+.roam-body .roam-app .roam-sidebar-content > div:first-child {
+  padding-bottom: 18px !important;
+}
+.roam-body .roam-app .roam-sidebar-content div {
+  line-height: 1.2 !important;
+}
+.roam-body .roam-app .roam-sidebar-content .starred-pages-wrapper > div:nth-child(1) {
+  flex: 0 0 1px;
+  background-color: white !important;
+  margin: 10px 20px;
+}
+.roam-body .roam-app .roam-sidebar-content .starred-pages-wrapper > div:nth-child(2) {
   display: none;
 }
-.roam-sidebar-content .top-row {
-  color: setContrast(var(--bg--left));
-}
-.roam-sidebar-content .log-button {
-  /* general navigations */
-  color: setContrast(var(--bg--left));
-}
-.roam-sidebar-content .log-button .bp3-icon {
-  color: setContrast(var(--bg--left));
-}
-.roam-sidebar-content .starred-pages-wrapper {
-  margin-top: 10px;
-  background: var(--bg--shortcuts);
-  color: setContrast(var(--bg--left));
-}
-.roam-sidebar-content .starred-pages-wrapper > .flex-h-box {
+.roam-body .roam-app .roam-sidebar-content .starred-pages-wrapper > .flex-h-box {
   display: none;
 }
-.roam-sidebar-content .page {
-  /* left sidebar pages */
-  color: setContrast(var(--bg--left));
+.roam-body .roam-app .roam-sidebar-content .log-button,
+.roam-body .roam-app .roam-sidebar-content .starred-pages-wrapper .starred-pages .page {
+  padding: 6px 24px 6px !important;
 }
+.roam-body .roam-app .roam-sidebar-content .shortcut {
+  padding: 14px 24px 0;
+}
+.roam-body .roam-app .roam-sidebar-content .top-row {
+  padding: 12px 0 0 20px;
+}
+.roam-body .roam-app .roam-sidebar-content .top-row .rm-db-title,
+.roam-body .roam-app .roam-sidebar-content .log-button,
+.roam-body .roam-app .roam-sidebar-content .starred-pages-wrapper .starred-pages .page {
+  background: transparent;
+  color: pink !important;
+}
+.roam-body .roam-app .roam-sidebar-content .top-row .rm-db-title:hover,
+.roam-body .roam-app .roam-sidebar-content .log-button:hover,
+.roam-body .roam-app .roam-sidebar-content .starred-pages-wrapper .starred-pages .page:hover {
+  background: transparent !important;
+  color: red !important;
+}
+
+/*** ANIMATIONS ***/

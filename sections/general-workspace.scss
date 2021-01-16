@@ -1,0 +1,114 @@
+/*------------------------------------
+# GENERAL WORKSPACE
+------------------------------------*/
+body,
+.roam-body,
+.roam-app,
+.rm-pages-title-text {
+  color: var(--c1) !important; // text color
+}
+
+// Remove main area left margin when there's no sidebar (public pages)
+.roam-app > div:only-child:not(.roam-sidebar-container) {
+  margin-left: 0 !important;
+}
+
+html,
+body,
+#app {
+  background: var(--page-background-color) !important;
+}
+
+.roam-center,
+.roam-body-main {
+  border-left: 1px solid var(--subtle-border-color) !important;
+  border-top: 1px solid var(--subtle-border-color) !important;
+  border-right: 1px solid var(--subtle-border-color) !important;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.03) !important;
+  background: var(--main-area-background-color) !important;
+  margin-right: 8px;
+  margin-left: 8px;
+  @media (max-width: 640px) {
+    margin-right: 6px;
+    margin-left: 6px;
+  }
+  .roam-article {
+    padding: 16px 32px 120px !important;
+    @media (max-width: 860px) {
+      padding: 12px 28px 120px !important;
+    }
+    @media (max-width: 640px) {
+      padding: 10px 20px 120px !important;
+    }
+  }
+}
+
+// .roam-topbar {
+//   background: var(--page-background-color) !important;
+//   border-bottom: none !important;
+//   input#find-or-create-input {
+//     box-shadow: none !important;
+//     border: 1px solid var(--search-border-color) !important;
+//   }
+// }
+
+.roam-body,
+.roam-topbar,
+#right-sidebar,
+.roam-sidebar-container {
+  background: var(--page-background-color) !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+.rm-quick-capture-sync-modal {
+  background: var(--secondary-background-color) !important;
+  border-radius: 8px !important;
+}
+
+.roam-body {
+  background: blue;
+}
+.roam-topbar {
+  background: none;
+}
+.roam-sidebar-container {
+  background: none !important;
+}
+#right-sidebar {
+  background: green;
+}
+.roam-body-main {
+  border: 1px solid red;
+  border-bottom: none;
+  border-radius: 2px 2px 0 0;
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  margin: 0px 5px; /* add space to show shadow */
+  box-shadow: 0px 0px 8px 1px rgb(49, 35, 35);
+  background: linear-gradient(red, blue);
+}
+
+// later: are these needed?
+// @media (max-width: 640px) {
+//   .roam-center,
+// .roam-body-main {
+//     margin-right: 6px;
+//     margin-left: 6px;
+//   }
+// }
+// @media (max-width: 860px) {
+//   .roam-center .roam-article,
+// .roam-body-main .roam-article {
+//     padding: 12px 28px 120px !important;
+//   }
+// }
+// @media (max-width: 640px) {
+//   .roam-center .roam-article,
+// .roam-body-main .roam-article {
+//     padding: 10px 20px 120px !important;
+//   }
+// }
+
+
+
