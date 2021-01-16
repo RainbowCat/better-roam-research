@@ -35,12 +35,37 @@
   }
 }
 
-.bp3-menu {
-  // code-area language menu
-  background-color: var(--bg--popover) !important;
-  color: var(--bg--popover-contrast);
-  .bp3-menu-item {
-    color: white;
+// menus
+.roam-body .roam-app {
+  .bp3-menu,
+  .roam-sidebar-container .bp3-menu {
+    background: pink;
+    &.rm-graph-dropdown {
+      // graph menu
+      .menu-title {
+        color: blue;
+      }
+      .menu-item {
+        color: red;
+      }
+      .setting {
+        a {
+          color: blue;
+        }
+        &:hover {
+          color: red;
+        }
+      }
+      .signout {
+        color: blue;
+      }
+    }
+    // code-area language menu
+    background-color: var(--bg--popover) !important;
+    color: var(--bg--popover-contrast);
+    .bp3-menu-item {
+      color: white;
+    }
   }
 }
 .bp3-elevation-3 {
@@ -50,20 +75,4 @@
   .dont-unfocus-block[style*="background"] {
     background-color: var(--bg--popover-hover) !important;
   }
-}
-
-// dunno yet
-.bp3-elevation-3,
-.confirmation-content-dialog,
-.bp3-dialog {
-  background: var(--popup-background-color) !important;
-}
-.bp3-elevation-3 {
-  // Selection in the menus
-  div.dont-unfocus-block[style*="background"] {
-    background: var(--secondary-background-color) !important;
-  }
-}
-.bp3-dialog h2.level2 {
-  color: var(--c1) !important;
 }
