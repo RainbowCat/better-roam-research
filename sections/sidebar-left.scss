@@ -1,15 +1,18 @@
+@use "utils";
+@use "vars";
 /*------------------------------------
 # LEFT SIDEBAR
 ------------------------------------*/
 .roam-body .roam-app .roam-sidebar-content {
-  --bg--left: black;
+  --bg--left: vars.$palette_black;
   --bg--shortcuts: linear-gradient(green, black);
-  --text: white;
+  --color-divline: white;
+  --color-text: pink;
+  --color-text-hover: red;
 }
 
+/*** LAYOUT ***/
 .roam-body .roam-app .roam-sidebar-content {
-  /*** LAYOUT ***/
-
   // hide logo
   #roam-sidebar-logo {
     display: none;
@@ -33,8 +36,8 @@
     // margin-top: 10px; // add space from .log-buttons
     // padding-top: 10px; // add space before pages
 
-    // border-top: 0.1em solid opacify(var(--white, 0.5)); //TODO
-    // border-top: 0.1em solid var(--white);
+    // border-top: 0.1em solid opacify($white, 0.5)); //TODO
+    // border-top: 0.1em solid $white);
     // > div:nth-child(1) {
     // horizontal line div
     // display: none;
@@ -42,8 +45,8 @@
     > div:nth-child(1) {
       // maybe use better class selector
       flex: 0 0 1px;
-      background-color: white !important; // todo make variable
-      margin: 10px 20px; // todo make variable
+      background-color: var(--color-divline) !important;
+      margin: 10px 20px; // maybe make variable
     }
     > div:nth-child(2) {
       // maybe use better class selector
@@ -67,18 +70,20 @@
   .top-row {
     padding: 12px 0 0 20px;
   }
+}
 
-  /*** APPEARANCE ***/
+/*** APPEARANCE ***/
+.roam-body .roam-app .roam-sidebar-content {
   background: var(--bg--left);
 
   .top-row .rm-db-title,
   .log-button,
   .starred-pages-wrapper .starred-pages .page {
     background: transparent;
-    color: pink !important; // todo make variable
+    color: var(--color-text) !important;
     &:hover {
       background: transparent !important;
-      color: red !important; //todo make variable
+      color: var(--color-text-hover) !important;
     }
   }
 }

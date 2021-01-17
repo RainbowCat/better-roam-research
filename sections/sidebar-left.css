@@ -1,62 +1,17 @@
-/*------------------------------------
-# LEFT SIDEBAR
-------------------------------------*/
-.roam-body .roam-app .roam-sidebar-content {
-  --bg--left: black;
-  --bg--shortcuts: linear-gradient(green, black);
-  --text: white;
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @use "utils";
+ *   | ^^^^^^^^^^^^
+ *   '
+ *   sections/sidebar-left.scss 1:1  root stylesheet */
 
-.roam-body .roam-app .roam-sidebar-content {
-  /*** LAYOUT ***/
-  padding: 0 !important;
-  /*** APPEARANCE ***/
-  background: var(--bg--left);
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use \"utils\";\a   \2502  ^^^^^^^^^^^^\a   \2575 \a   sections/sidebar-left.scss 1:1  root stylesheet";
 }
-.roam-body .roam-app .roam-sidebar-content #roam-sidebar-logo {
-  display: none;
-}
-.roam-body .roam-app .roam-sidebar-content > div:not(.log-button):not(:first-child) {
-  padding: 0 !important;
-}
-.roam-body .roam-app .roam-sidebar-content > div:first-child {
-  padding-bottom: 18px !important;
-}
-.roam-body .roam-app .roam-sidebar-content div {
-  line-height: 1.2 !important;
-}
-.roam-body .roam-app .roam-sidebar-content .starred-pages-wrapper > div:nth-child(1) {
-  flex: 0 0 1px;
-  background-color: white !important;
-  margin: 10px 20px;
-}
-.roam-body .roam-app .roam-sidebar-content .starred-pages-wrapper > div:nth-child(2) {
-  display: none;
-}
-.roam-body .roam-app .roam-sidebar-content .starred-pages-wrapper > .flex-h-box {
-  display: none;
-}
-.roam-body .roam-app .roam-sidebar-content .log-button,
-.roam-body .roam-app .roam-sidebar-content .starred-pages-wrapper .starred-pages .page {
-  padding: 6px 24px 6px !important;
-}
-.roam-body .roam-app .roam-sidebar-content .shortcut {
-  padding: 14px 24px 0;
-}
-.roam-body .roam-app .roam-sidebar-content .top-row {
-  padding: 12px 0 0 20px;
-}
-.roam-body .roam-app .roam-sidebar-content .top-row .rm-db-title,
-.roam-body .roam-app .roam-sidebar-content .log-button,
-.roam-body .roam-app .roam-sidebar-content .starred-pages-wrapper .starred-pages .page {
-  background: transparent;
-  color: pink !important;
-}
-.roam-body .roam-app .roam-sidebar-content .top-row .rm-db-title:hover,
-.roam-body .roam-app .roam-sidebar-content .log-button:hover,
-.roam-body .roam-app .roam-sidebar-content .starred-pages-wrapper .starred-pages .page:hover {
-  background: transparent !important;
-  color: red !important;
-}
-
-/*** ANIMATIONS ***/

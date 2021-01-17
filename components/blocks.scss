@@ -3,7 +3,7 @@
 ------------------------------------*/
 $rm-block-selector: ".rm-block, .roam-block, .roam-block-container";
 
-@mixin setBorder($color: var(--theme), $radius: 5) {
+@mixin setBorder($color: $palette-theme, $radius: 5) {
   padding: 5%;
   border: 1px solid $color !important;
   border-radius: $radius;
@@ -17,20 +17,20 @@ $rm-block-selector: ".rm-block, .roam-block, .roam-block-container";
 @mixin block_focused {
   //todo
   padding: 0px;
-  // @include setBorder(opacify(var(--accent-darker), 0.6), 5);
+  // @include setBorder(opacify($accent-darker), 0.6), 5);
 }
 
 @mixin block_selected-main {
   /* selected block in main edit area */
-  background-color: var(--accent-darker);
+  background-color: $palette-accent-darker;
 }
 @mixin block_selected-linked {
   /* selected block in linked referenced */
-  background-color: var(--block-highlight-bg);
+  background-color: $block-highlight-bg;
 }
 @mixin block_selected-embed {
   /* embed block highlight */
-  background-color: var(--embed-container-bg);
+  background-color: $embed-container-bg;
 }
 
 /* block highlights */
@@ -52,7 +52,7 @@ $rm-block-selector: ".rm-block, .roam-block, .roam-block-container";
   }
   .block-highlight-blue {
     /* block selection */
-    background-color: var(--block-highlight);
+    background-color: $block-highlight);
   }
   /* selected block in linked referenced */
   .block-highlight-yellow {
@@ -67,7 +67,7 @@ $rm-block-selector: ".rm-block, .roam-block, .roam-block-container";
 
 // Selection
 .block-highlight-blue {
-  background-color: var(--selection-color) !important;
+  background-color: $selection-color) !important;
 }
 
 //TODO
@@ -75,8 +75,8 @@ $rm-block-selector: ".rm-block, .roam-block, .roam-block-container";
 // .rm-block-ref {
 //   /* linked refs */
 //   cursor: alias;
-//   border-bottom: 1px solid var(--block-ref-border-bottom);
+//   border-bottom: 1px solid $block-ref-border-bottom);
 // }
 // .rm-block-ref:hover {
-//   background-color: var(--block-ref-hover-bg);
+//   background-color: $block-ref-hover-bg);
 // }

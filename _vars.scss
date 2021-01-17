@@ -1,0 +1,26 @@
+/*------------------------------------
+# THEME
+------------------------------------*/
+$gunmetal: hsla(199, 35%, 12%, 1);
+$charcoal: hsla(197, 37%, 24%, 1);
+$persian-green: hsla(173, 58%, 39%, 1);
+$seashell: hsla(34, 80%, 96%, 1);
+$orange-yellow-crayola: hsla(43, 73%, 68%, 1);
+$sandy-brown: hsla(27, 87%, 67%, 1);
+$burnt-sienna: hsla(12, 76%, 61%, 1);
+
+$palette_theme: $charcoal;
+$palette_theme-lighter: $persian-green;
+$palette_theme-darker: $gunmetal;
+
+$palette_neutral: $orange-yellow-crayola;
+$palette_neutral-lighter: $seashell;
+$palette_neutral-darker: $sandy-brown;
+
+$palette_accent: $burnt-sienna;
+$palette_accent-lighter: $orange-yellow-crayola;
+$palette_accent-darker: $orange-yellow-crayola;
+
+$palette_black: #222222;
+$palette_white: #ffffff;
+$palette_grey: #f5f5f5;

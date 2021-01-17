@@ -5,7 +5,7 @@ body,
 .roam-body,
 .roam-app,
 .rm-pages-title-text {
-  color: var(--c1) !important; // text color
+  color: $c1) !important; // text color
 }
 
 // Remove main area left margin when there's no sidebar (public pages)
@@ -16,17 +16,17 @@ body,
 html,
 body,
 #app {
-  background: var(--page-background-color) !important;
+  background: $page-background-color) !important;
 }
 
 .roam-center,
 .roam-body-main {
-  border-left: 1px solid var(--subtle-border-color) !important;
-  border-top: 1px solid var(--subtle-border-color) !important;
-  border-right: 1px solid var(--subtle-border-color) !important;
+  border-left: 1px solid $subtle-border-color) !important;
+  border-top: 1px solid $subtle-border-color) !important;
+  border-right: 1px solid $subtle-border-color) !important;
   border-radius: 12px 12px 0 0;
   box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.03) !important;
-  background: var(--main-area-background-color) !important;
+  background: $main-area-background-color) !important;
   margin-right: 8px;
   margin-left: 8px;
   @media (max-width: 640px) {
@@ -45,11 +45,11 @@ body,
 }
 
 // .roam-topbar {
-//   background: var(--page-background-color) !important;
+//   background: $page-background-color) !important;
 //   border-bottom: none !important;
 //   input#find-or-create-input {
 //     box-shadow: none !important;
-//     border: 1px solid var(--search-border-color) !important;
+//     border: 1px solid $search-border-color) !important;
 //   }
 // }
 
@@ -57,13 +57,13 @@ body,
 .roam-topbar,
 #right-sidebar,
 .roam-sidebar-container {
-  background: var(--page-background-color) !important;
+  background: $page-background-color) !important;
   border-bottom: none !important;
   box-shadow: none !important;
 }
 
 .rm-quick-capture-sync-modal {
-  background: var(--secondary-background-color) !important;
+  background: $secondary-background-color) !important;
   border-radius: 8px !important;
 }
 

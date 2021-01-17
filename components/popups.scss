@@ -10,27 +10,27 @@
 
 // all popoevers
 .bp3-popover {
-  color: var(--theme);
-  background: var(--bg--popover);
+  color: $theme);
+  background: $bg--popover);
   & > &-content {
-    background-color: var(--bg--popover);
-    color: var(--bg--popover-contrast);
+    background-color: $bg--popover);
+    color: $bg--popover-contrast);
   }
   & &-arrow {
     &-fill {
-      fill: var(--bg--popover); // background
+      fill: $bg--popover); // background
     }
     &-border {
-      fill: var(--bg--popover-contrast); //tiny border
+      fill: $bg--popover-contrast); //tiny border
     }
   }
   .bp3-button {
     // tag selection buttons in page filter
-    background: radial-gradient(var(--bg--popover), white); // add dimension to buttons
-    color: var(--bg--popover-contrast);
+    background: radial-gradient($bg--popover), white); // add dimension to buttons
+    color: $bg--popover-contrast);
     &:hover {
       color: blue !important; //TODO make variable
-      background: radial-gradient(var(--bg--popover), black);
+      background: radial-gradient($bg--popover), black);
     }
   }
 }
@@ -61,8 +61,8 @@
       }
     }
     // code-area language menu
-    background-color: var(--bg--popover) !important;
-    color: var(--bg--popover-contrast);
+    background-color: $bg--popover) !important;
+    color: $bg--popover-contrast);
     .bp3-menu-item {
       color: white;
     }
@@ -70,9 +70,9 @@
 }
 .bp3-elevation-3 {
   // slash menu
-  background-color: var(--bg--popover) !important;
-  color: var(--bg--popover-contrast);
+  background-color: $bg--popover) !important;
+  color: $bg--popover-contrast);
   .dont-unfocus-block[style*="background"] {
-    background-color: var(--bg--popover-hover) !important;
+    background-color: $bg--popover-hover) !important;
   }
 }

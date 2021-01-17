@@ -1,48 +1,17 @@
-/*------------------------------------
-# TEXT
-------------------------------------*/
-.rm-title-display,
-.rm-title-textarea,
-.roam-log-page h1.level2 {
-  height: auto !important;
-  line-height: 1.5 !important;
-  font-size: 26px !important;
-  font-weight: 600 !important;
-}
+/* Error: expected ";".
+ *    ,
+ * 53 |   color: $c1) !important;
+ *    |             ^
+ *    '
+ *   components/typography.scss 53:13  root stylesheet */
 
-.rm-heading-level-1 > .rm-block-main span {
-  margin-top: -2px !important;
-}
-.rm-heading-level-1 > .rm-block-main div,
-.rm-heading-level-1 > .rm-block-main textarea {
-  font-size: 22px !important;
-  line-height: 1.5 !important;
-  font-weight: 600 !important;
-}
-
-.rm-heading-level-2 > .rm-block-main span {
-  margin-top: -2px !important;
-}
-.rm-heading-level-2 > .rm-block-main div,
-.rm-heading-level-2 > .rm-block-main textarea {
-  font-size: 20px !important;
-  line-height: 1.5 !important;
-  font-weight: 600 !important;
-}
-
-.rm-heading-level-3 > .rm-block-main span {
-  margin-top: -1px !important;
-}
-.rm-heading-level-3 > .rm-block-main div,
-.rm-heading-level-3 > .rm-block-main textarea {
-  font-size: 18px !important;
-  line-height: 1.5 !important;
-}
-
-.level2 {
-  font-weight: inherit !important;
-}
-
-h1 {
-  color: var(--c1) !important;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: expected ";".\a    \2577 \a 53 \2502    color: $c1) !important;\a    \2502              ^\a    \2575 \a   components/typography.scss 53:13  root stylesheet';
 }

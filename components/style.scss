@@ -1,5 +1,5 @@
 .bp3-button:not(.bp3-intent-primary) {
-  color: var(--c2) !important;
+  color: $c2) !important;
 }
 
 /*------------------------------------
@@ -25,34 +25,34 @@
 
 // Block references
 .rm-inline-references {
-  background-color: var(--secondary-background-color) !important;
-  border-left-color: var(--c3) !important;
+  background-color: $secondary-background-color) !important;
+  border-left-color: $c3) !important;
   border-left-width: 3px !important;
   border-radius: 3px !important;
 }
 
 .block-ref-count-button.rm-active {
-  background-color: var(--secondary-background-color) !important;
+  background-color: $secondary-background-color) !important;
 }
 
 // Inline parentheticals
 
 .rm-paren {
-  color: var(--c1) !important;
-  background-color: var(--secondary-background-color) !important;
-  border: 1px solid var(--subtle-border-color) !important;
+  color: $c1) !important;
+  background-color: $secondary-background-color) !important;
+  border: 1px solid $subtle-border-color) !important;
 }
 .rm-paren--closed {
-  color: var(--c1) !important;
+  color: $c1) !important;
   path {
-    fill: var(--c1) !important;
+    fill: $c1) !important;
   }
 }
 
 // Block quotes
 .rm-bq {
-  background-color: var(--secondary-background-color) !important;
-  border-left-color: var(--c3) !important;
+  background-color: $secondary-background-color) !important;
+  border-left-color: $c3) !important;
   border-left-width: 3px !important;
   border-radius: 3px !important;
   padding: 8px 14px !important;
@@ -62,18 +62,18 @@
 .rm-page-ref--link,
 .rm-ref-page-view-title > a,
 .rm-alias--external {
-  color: var(--accent-color) !important;
+  color: $accent-color) !important;
 }
 
 .rm-page-ref-brackets {
-  color: var(--brackets-color) !important;
+  color: $brackets-color) !important;
 }
 
 .bp3-input {
-  color: var(--c1) !important;
-  background: var(--main-area-background-color) !important;
+  color: $c1) !important;
+  background: $main-area-background-color) !important;
   &::placeholder {
-    color: var(--c4) !important;
+    color: $c4) !important;
   }
 }
 
@@ -81,7 +81,7 @@
 .rm-title-untitled,
 #block-input-ghost > span,
 textarea::placeholder {
-  color: var(--empty-text-color) !important;
+  color: $empty-text-color) !important;
 }
 
 body,
@@ -118,7 +118,7 @@ span.checkmark {
 }
 
 .roam-log-container .roam-log-page {
-  border-top: 1px solid var(--subtle-border-color) !important;
+  border-top: 1px solid $subtle-border-color) !important;
   &:first-child {
     min-height: 0 !important;
     border-top: none !important;
@@ -130,12 +130,12 @@ span.checkmark {
 }
 
 .rm-reference-item {
-  background: var(--reference-item-background) !important;
-  border: 1px solid var(--subtle-border-color) !important;
+  background: $reference-item-background) !important;
+  border: 1px solid $subtle-border-color) !important;
   border-radius: 6px !important;
   padding: 8px 10px 8px 2px !important;
   .rm-block-text {
-    font-size: var(--font-size) !important;
+    font-size: $font-size) !important;
   }
 }
 
@@ -158,9 +158,9 @@ span.checkmark {
 
 .rm-block-ref {
   &:hover {
-    background: var(--ref-hover-bg-color) !important;
+    background: $ref-hover-bg-color) !important;
   }
-  border-bottom: 0.5px solid var(--border-color) !important;
+  border-bottom: 0.5px solid $border-color) !important;
 }
 
 .CodeMirror {
@@ -174,7 +174,7 @@ span.checkmark {
 
 .rm-block-text {
   max-width: 660px !important;
-  font-size: var(--font-size) !important;
+  font-size: $font-size) !important;
 }
 
 .block-bullet-view {
@@ -188,7 +188,7 @@ span.checkmark {
 }
 
 .block-border-left {
-  border-left-color: var(--subtle-border-color) !important;
+  border-left-color: $subtle-border-color) !important;
 }
 
 .rm-reference-main {
@@ -201,34 +201,34 @@ span.checkmark {
 
 .bp3-menu,
 .bp3-popover .bp3-popover-content {
-  background-color: var(--popup-background-color) !important;
+  background-color: $popup-background-color) !important;
 }
 
 .bp3-popover .bp3-popover-arrow-fill {
-  fill: var(--popup-background-color) !important;
+  fill: $popup-background-color) !important;
 }
 
 .bp3-menu,
 .bp3-popover,
 .bp3-popover-content,
 .roam-body .roam-app .roam-sidebar-container .rm-graph-dropdown a {
-  color: var(--c1) !important;
+  color: $c1) !important;
   div > div > .flex-h-box div > div > span,
   div > div > .flex-h-box div > div > strong,
   div > div > div > button,
   > ul > div {
-    color: var(--c1) !important;
+    color: $c1) !important;
   }
 }
 
 .rm-find-or-create-wrapper .rm-menu-item .rm-search-list-item {
-  color: var(--c2) !important;
+  color: $c2) !important;
 }
 
 .rm-search-path-results {
-  background-color: var(--popup-background-color) !important;
+  background-color: $popup-background-color) !important;
   li {
-    color: var(--c1) !important;
+    color: $c1) !important;
   }
 }
 
@@ -246,13 +246,13 @@ span.checkmark {
 
 .rm-menu-item[style*="background-color"],
 .roam-body .roam-app .roam-sidebar-container .rm-graph-dropdown .setting:hover {
-  background-color: var(--secondary-background-color) !important;
+  background-color: $secondary-background-color) !important;
 }
 
 // Mobile bar
 
 #rm-mobile-bar {
-  background-color: var(--main-area-background-color) !important;
+  background-color: $main-area-background-color) !important;
   &[style*="bottom: 0px"] {
     padding-bottom: env(safe-area-inset-bottom);
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 15px, rgba(0, 0, 0, 0.1) 0px 0px 50px !important;
@@ -268,5 +268,5 @@ span.checkmark {
   line-height: 1.4;
   padding: 7px;
   opacity: 0.6;
-  color: var(--c2);
+  color: $c2);
 }

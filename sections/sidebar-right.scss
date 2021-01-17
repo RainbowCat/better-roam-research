@@ -8,7 +8,7 @@
   #roam-right-sidebar-content {
     margin-left: -6px !important;
     > div[style] {
-      border-bottom: 1px solid var(--subtle-border-color) !important;
+      border-bottom: 1px solid $subtle-border-color) !important;
     }
   }
   .hoverparent,
@@ -26,7 +26,7 @@
 #roam-right-sidebar-content {
   .sidebar-content {
     > div > div[style*="border-bottom"] {
-      border-bottom: 1px solid var(--subtle-border-color) !important;
+      border-bottom: 1px solid $subtle-border-color) !important;
     }
   }
 }
