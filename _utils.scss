@@ -1,15 +1,5 @@
 // used to integrate CSS variables and SASS color functions
 
-// return css color variable with different opacity value
-@function alpha($color, $opacity) {
-  $color: str-replace($color, "var(");
-  $color: str-replace($color, ")");
-  $color-h: var(#{$color + "-h"});
-  $color-s: var(#{$color + "-s"});
-  $color-l: var(#{$color + "-l"});
-  @return hsla($color-h, $color-s, $color-l, $opacity);
-}
-
 // replace substring with another string
 // credits: https://css-tricks.com/snippets/sass/str-replace-function/
 @function str-replace($string, $search, $replace: "") {
@@ -19,6 +9,16 @@
       str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
   }
   @return $string;
+}
+
+// return css color variable with different opacity value
+@function alpha($color, $opacity) {
+  $color: str-replace($color, "var(");
+  $color: str-replace($color, ")");
+  $color-h: var(#{$color + "-h"});
+  $color-s: var(#{$color + "-s"});
+  $color-l: var(#{$color + "-l"});
+  @return hsla($color-h, $color-s, $color-l, $opacity);
 }
 
 @function lightness($color, $lightnessMultiplier) {

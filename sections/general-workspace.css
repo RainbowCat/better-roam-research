@@ -1,8 +1,6 @@
 /*------------------------------------
 # GENERAL WORKSPACE
 ------------------------------------*/
-
-
 body,
 .roam-body,
 .roam-app,
@@ -33,7 +31,7 @@ body,
 }
 @media (max-width: 640px) {
   .roam-center,
-  .roam-body-main {
+.roam-body-main {
     margin-right: 6px;
     margin-left: 6px;
   }
@@ -44,13 +42,13 @@ body,
 }
 @media (max-width: 860px) {
   .roam-center .roam-article,
-  .roam-body-main .roam-article {
+.roam-body-main .roam-article {
     padding: 12px 28px 120px !important;
   }
 }
 @media (max-width: 640px) {
   .roam-center .roam-article,
-  .roam-body-main .roam-article {
+.roam-body-main .roam-article {
     padding: 10px 20px 120px !important;
   }
 }

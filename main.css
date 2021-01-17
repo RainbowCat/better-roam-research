@@ -744,6 +744,13 @@ span.checkmark {
   margin-bottom: 8px !important;
 }
 
+/*--- Table ---*/
+.roam-table th,
+.roam-table td,
+.roam-table tr {
+  border: var(--table-border);
+}
+
 /*------------------------------------
 # Datepicker
 ------------------------------------*/
