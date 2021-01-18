@@ -26,8 +26,8 @@
     // margin-top: 10px; // add space from .log-buttons
     // padding-top: 10px; // add space before pages
 
-    // border-top: 0.1em solid opacify($white, 0.5)); //TODO
-    // border-top: 0.1em solid $white);
+    // border-top: 0.1em solid opacify($white, 0.5; //TODO
+    // border-top: 0.1em solid $white;
     // > div:nth-child(1) {
     // horizontal line div
     // display: none;
@@ -35,7 +35,7 @@
     > div:nth-child(1) {
       // maybe use better class selector
       flex: 0 0 1px;
-      background-color: var(--color-divline) !important;
+      background-color: $color-divline !important;
       margin: 10px 20px; // maybe make variable
     }
     > div:nth-child(2) {
@@ -69,10 +69,10 @@
   .log-button,
   .starred-pages-wrapper .starred-pages .page {
     background: transparent;
-    color: var(--color-text) !important;
+    color: $color-text !important;
     &:hover {
       background: transparent !important;
-      color: var(--color-text-hover) !important;
+      color: $color-text-hover !important;
     }
   }
 }

@@ -1,8 +1,8 @@
-@import "general-workspace";
+@import "src/global";
 
-@import "topbar";
-@import "sidebar-left";
-@import "sidebar-right";
-@import "editor";
+@import "src/topbar";
+@import "src/sidebar-left";
+@import "src/sidebar-right";
+@import "src/editor";
 
-@import "all-pages";
+@import "src/all-pages";

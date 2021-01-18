@@ -3,7 +3,7 @@
 ------------------------------------*/
 // style topbar
 .roam-topbar {
-  background: var(--bg--topbar);
+  background: $topbar_bg;
   // color: $palette_white;
 }
 
@@ -23,7 +23,7 @@
     .bp3-overlay {
       opacity: 1 !important;
       position: fixed !important;
-      left: var(--searchbar-left);
+      left: $searchbar-left;
 
       /* place at front of page */
       z-index: 999999;
@@ -33,15 +33,15 @@
     }
     input#find-or-create-input:focus {
       box-sizing: content-box;
-      top: var(--searchbar-top);
-      height: var(--searchbar-height) !important;
-      width: var(--searchbar-width) !important;
-      font-size: var(--searchbar-font);
-      padding: var(--searchbar-padding-tb) var(--searchbar-padding-lr); // padding around flace holder text
+      top: $searchbar-top;
+      height: $searchbar-height !important;
+      width: $searchbar-width !important;
+      font-size: $searchbar-font;
+      padding: $searchbar-padding-tb $searchbar-padding-lr; // padding around placeholder text
     }
     .bp3-overlay {
-      top: calc(var(--searchbar-top) + var(--searchbar-height) + 2 * var(--searchbar-padding-tb));
-      width: calc(var(--searchbar-width) + 2 * var(--searchbar-padding-lr) + 2px); // 2px for border
+      top: calc($searchbar-top + $searchbar-height + 2 * $searchbar-padding-tb);
+      width: calc($searchbar-width + 2 * $searchbar-padding-lr + 2px); // 2px for border
       > .bp3-transition-container {
         transform: none !important; // turn off animation
       }
@@ -65,7 +65,7 @@
       box-shadow: 0 0 0 200vh rgba(0, 0, 0, 0.07);
 
       // box-shadow: 0 0 0 1px rgba(16, 22, 26, 0.1), 0 2px 4px rgba(16, 22, 26, 0.2),
-      //   0 8px 24px rgba(16, 22, 26, 0.2);
+      //   0 8px 24px rgba(16, 22, 26, 0.2;
       box-shadow: none;
       &,
       & > .bp3-popover-content,
@@ -79,17 +79,17 @@
 
 /* make all elements look like a button */
 .roam-topbar .flex-h-box {
-  justify-content: var(--icons-placement);
+  justify-content: $icons-placement;
 
   > div,
   > span {
-    height: var(--icons-size);
-    width: var(--icons-size);
+    height: $icons-size;
+    width: $icons-size;
     margin: 5px; //icons margin
   }
   .rm-saving-icon {
-    height: var(--icons-size);
-    width: var(--icons-size);
+    height: $icons-size;
+    width: $icons-size;
     margin: 0px;
     padding: 0px;
     border-radius: 3px;
@@ -104,8 +104,8 @@
     input#find-or-create-input {
       opacity: 0;
       z-index: 10000; /* bring in front of icon to keep clickable */
-      width: var(--icons-size) !important;
-      height: var(--icons-size) !important;
+      width: $icons-size !important;
+      height: $icons-size !important;
       padding: 0px;
       margin: 0px;
       cursor: pointer;
@@ -118,8 +118,8 @@
 
   // other buttons
   .bp3-button.bp3-minimal {
-    height: var(--icons-size);
-    width: var(--icons-size);
+    height: $icons-size;
+    width: $icons-size;
     margin: 0px !important;
   }
 
@@ -127,22 +127,22 @@
   [class~="bp3-icon"],
   .bp3-button.bp3-minimal {
     &:before {
-      color: var(--icon-color);
+      color: $icon-color;
       background: transparent;
     }
   }
   .bp3-icon-filter,
   .bp3-icon-search {
-    color: var(--icon-color) !important;
+    color: $icon-color !important;
   }
   .rm-find-or-create-wrapper,
   [class~="bp3-icon"]:not(.bp3-icon-filter):not(.bp3-icon-search),
   .bp3-button.bp3-minimal {
     border-radius: 3px;
     transition: none;
-    background: var(--icons-bg-regular) !important;
+    background: $icons-bg-regular !important;
     &:hover {
-      background: var(--icons-bg-hover) !important;
+      background: $icons-bg-hover !important;
     }
   }
 }
