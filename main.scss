@@ -1,31 +1,5 @@
-@use "sass:color";
-
-@import "global";
-
-@import "alok/palette";
+@import "palette";
 @import "utils";
-@import "alok/vars";
+@import "vars";
 
-@import "sections/general-workspace";
-@import "sections/topbar";
-@import "sections/sidebar-left";
-@import "sections/sidebar-right";
-
-@import "sections/all-pages";
-
-@import "components/style";
-@import "components/typography";
-@import "components/blocks";
-@import "components/bullets";
-@import "components/tags";
-
-@import "components/popups";
-@import "components/datepicker";
-
-@import "components/kanban";
-@import "components/tables";
-@import "components/code";
-
-@import "hacks/fixed-text";
-@import "hacks/glyph";
-@import "hacks/shift-bullets";
+@import "style";

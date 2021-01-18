@@ -1,0 +1,18 @@
+/* Error: There is no module with the namespace "color".
+ *   ,
+ * 6 |   --color-subtle: #{color.change($palette_theme, $alpha: 0.5)};
+ *   |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   alok/_vars.scss 6:21  @import
+ *   alok.scss 3:9         root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: There is no module with the namespace "color".\a   \2577 \a 6 \2502    --color-subtle: #{color.change($palette_theme, $alpha: 0.5)};\a   \2502                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   alok/_vars.scss 6:21  @import\a   alok.scss 3:9         root stylesheet';
+}
