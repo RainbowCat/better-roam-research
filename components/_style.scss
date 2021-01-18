@@ -70,11 +70,15 @@
 /* Credits */
 .roam-topbar > div > div:last-child ul.bp3-menu:after {
   content: "theme by @RainbowCat 🍀";
-  width: 160px;
+  border: 1px solid $palette_white;
+  border-radius: 10px;
+  // width: 160px;
   display: inline-block;
   font-size: 13px;
   line-height: 1.4;
   padding: 7px;
-  opacity: 0.6;
-  color: var(--text-color);
+  margin-top: 5px;
+  // opacity: 0.8;
+  color: $palette_white;
+  text-align: right;
 }

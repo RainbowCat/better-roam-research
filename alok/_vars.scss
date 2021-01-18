@@ -1,12 +1,12 @@
+
 /*------------------------------------
 # THEME
 ------------------------------------*/
 :root {
   --color-subtle: #{color.change($palette_theme, $alpha: 0.5)};
-  --bg-main-color: #{$palette_theme};
+  --bg-main-color: #{$palette_theme-darker};
   --bg-secondary-color: #{$palette_theme_lighter};
   --text-color: #{setContrast($palette_theme)};
-  // linear-gradient(red, blue)
 }
 
 /*------------------------------------
@@ -18,16 +18,48 @@
   --editor-margin: 20px 30px;
   --roundness: 5px;
 }
+
 /*------------------------------------
 # general appearance
 ------------------------------------*/
 :root {
   --bg--left: #{$palette_theme-darker};
-  --bg--topbar: #{$palette_theme};
+  --bg--topbar: #{$palette_theme-darker};
+  --bg--right: #{$palette_theme};
+  --right-title-color: #{setContrast($palette_theme-lighter)};
 }
+
 /*------------------------------------
 # text
 ------------------------------------*/
+.rm-highlight {
+  --highlight-bg:$palette_accent;
+  --highlight-text:#{setContrast($palette_accent)};
+}
+
+:root {
+  --bullet-color: #{$palette_accent};
+  --bullet-closed-border: 4px solid #{$palette_accent-darker};
+  --tree-vertline: 1px solid #{setContrast($palette_theme)};
+  /*--bullet-position: ;*/
+}
+
+.checkmark {
+  --checkmark-top: -1px;
+  --checkmark-left: -2px;
+  --checkmark-height: 14px;
+  --checkmark-width: 14px;
+  --checkmark-border-radius: 4px;
+
+  --border-notdone: 1px solid #{$palette_black};
+  --bg-notdone: #{opacify($palette_white, 0.5)};
+
+  --border-done: 1px solid #{$palette_white};
+  --bg-done: #{$palette_accent};
+
+  --symbol-color: #{setContrast($palette_theme)};
+  --symbol: "✔";
+}
 
 /*------------------------------------
 # components
@@ -35,11 +67,12 @@
 .roam-body .roam-app .roam-sidebar-content {
   // --bg--shortcuts: linear-gradient(green, black);
   --color-divline: #{setContrast($palette_theme)};
-  --color-text: #{$palette_accent-lighter};
-  --color-text-hover: #{$palette_accent-darker};
+  --color-text: #{$palette_accent-darker};
+  --color-text-hover: #{$palette_accent-lighter};
 }
 
 .roam-body .roam-app .roam-topbar {
+  --icons-placement: flex-end;
   --searchbar-height: 45px;
   --searchbar-width: 500px;
   --searchbar-left: 55vw;
@@ -54,7 +87,7 @@
 ------------------------------------*/
 :root {
   --allpage-bottom-border-color: #2d3133;
-  --pages-header-row: white;
+  --pages-header-row: $palette_white;
   --pages-mentions-level-bg: #3c96ff;
   --pages-mentions-level1-bg: #3d71ff;
   --pages-mentions-level2-bg: #3c50ff;
@@ -74,6 +107,24 @@
   --checkmark-done-color: #{$palette_accent-darker};
 }
 
+:root {
+  --datepicker-bg: pink;
+  --datepicker-day-wrapper: #36393c;
+  --datepicker-altfont-color: #545d63;
+  --datepicker-hover-bg: #0073f9;
+  --datepicker-hover-text: white;
+}
+
+.rm-block,
+.roam-block,
+.rm-block-children,
+.roam-block-container {
+  --block-highlight-main: #{$palette_accent};
+  --block-highlight-linked: #{$palette_accent};
+  --block-highlight-linked-text: #{setContrast($palette_accent)};
+  --block-highlight-embed: #{$palette_accent-lighter};
+}
+
 .bp3-menu,
 .bp3-popover,
 .bp3-elevation-3 {
@@ -83,7 +134,7 @@
 
   --page-filter-btns-text: var(--bg--popover-contrast);
   --page-filter-btns-bg: radial-gradient(var(--bg--popover), white);
-  --page-filter-btns-text-hover: blue;
+  --page-filter-btns-text-hover: $palette_theme
   --page-filter-btns-bg-hover: radial-gradient(var(--bg--popover), black);
 }
 
@@ -95,3 +146,4 @@
   --kanban-div: #{setContrast($palette_theme)};
   --kanban-border: #{setContrast($palette_theme)};
 }
+

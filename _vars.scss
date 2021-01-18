@@ -79,7 +79,7 @@
 ------------------------------------*/
 :root {
   --allpage-bottom-border-color: #2d3133;
-  --pages-header-row: white;
+  --pages-header-row: $palette_white;
   --pages-mentions-level-bg: #3c96ff;
   --pages-mentions-level1-bg: #3d71ff;
   --pages-mentions-level2-bg: #3c50ff;
@@ -108,7 +108,7 @@
 
   --page-filter-btns-text: var(--bg--popover-contrast);
   --page-filter-btns-bg: radial-gradient(var(--bg--popover), white);
-  --page-filter-btns-text-hover: blue;
+  --page-filter-btns-text-hover: $palette_theme
   --page-filter-btns-bg-hover: radial-gradient(var(--bg--popover), black);
 }
 

@@ -1,8 +1,8 @@
 @use "sass:color";
 
-@import "palette";
+@import "alok/palette";
 @import "utils";
-@import "vars";
+@import "alok/vars";
 
 @import "sections/general-workspace";
 @import "sections/topbar";
@@ -22,6 +22,7 @@
 
 @import "components/kanban";
 @import "components/tables";
+@import "components/code";
 
 @import "hacks/fixed-text";
 @import "hacks/glyph";

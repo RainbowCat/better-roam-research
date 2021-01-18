@@ -1,11 +1,6 @@
 /*------------------------------------
 # Datepicker
 ------------------------------------*/
-:root {
-  --datepicker-bg: pink;
-  --datepicker-day-wrapper: #36393c;
-  --datepicker-altfont-color: #545d63;
-}
 
 //TODO
 .bp3-icon-calendar {
@@ -35,7 +30,7 @@ span.bp3-icon.bp3-icon-chevron-right,
 .bp3-html-select.bp3-minimal select:hover,
 .bp3-select.bp3-minimal select:hover {
   background: #0073f9;
-  color: white;
+  color: $palette_white;
 }
 .bp3-datepicker .DayPicker-Weekday abbr[title] {
   /* abbreviated day titles */
@@ -56,8 +51,8 @@ span.bp3-icon.bp3-icon-chevron-right,
 }
 .bp3-datepicker .DayPicker-Day:hover {
   /* hover background color */
-  background: #0073f9;
-  color: white;
+  background: var(--datepicker-hover-bg);
+  color: var(--datepicker-hover-text);
 }
 /* today bg color */
 .bp3-datepicker .DayPicker-Day.DayPicker-Day--isToday .bp3-datepicker-day-wrapper {

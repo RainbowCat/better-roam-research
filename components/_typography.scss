@@ -21,8 +21,8 @@
 /* highlighted text */
 .rm-highlight {
   margin: 0px;
-  background: $palette_accent;
-  color: setContrast($palette_accent) !important;
+  background: var(--highlight-bg);
+  color: var(--highlight-text) !important;
   padding: 2px 3px;
 }
 
@@ -194,10 +194,10 @@
 .rm-block-ref {
   /* linked refs */
   cursor: alias;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid $palette_accent;
 }
 .rm-block-ref:hover {
-  background-color: blue;
+  background-color: $palette_theme
 }
 
 /*------------------------------------
@@ -208,14 +208,14 @@
     /* internally linked alias */
     color: setContrast($palette_theme);
     &:hover {
-      color: blue;
+      color: $palette_theme
     }
   }
   & &--external {
     /* externally linked alias */
     color: pink;
     &:hover {
-      color: red;
+      color: $palette_accent;
     }
   }
 }
@@ -224,19 +224,19 @@
 # Linked/Unlinked References
 ------------------------------------*/
 .rm-reference-main {
-  --ref-header-color: white;
-  --ref-header-underline-color: red;
+  --ref-header-color: $palette_white;
+  --ref-header-underline-color: $palette_accent;
 
-  --ref-item-page-color: white;
-  --ref-item-parent-color: white;
-  --ref-item-bg: blue;
+  --ref-item-page-color: $palette_white;
+  --ref-item-parent-color: $palette_white;
+  --ref-item-bg: $palette_theme
   --ref-item-border-radius: var(--roundness);
-  --ref-item-border: 1px solid white;
+  --ref-item-border: 1px solid $palette_white;
 }
 
 .rm-reference-main {
   padding: 5px 10px 5px 18px;
-  border: 1px solid white;
+  border: 1px solid $palette_white;
 
   button.bp3-button.bp3-minimal {
     color: white !important;

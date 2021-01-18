@@ -5,16 +5,6 @@
 .roam-block,
 .rm-block-children,
 .roam-block-container {
-  --block-highlight-main: #{$palette_accent};
-  --block-highlight-linked: #{$palette_accent};
-  --block-highlight-linked-text: #{setContrast($palette_accent)};
-  --block-highlight-embed: #{$palette_accent-lighter};
-}
-
-.rm-block,
-.roam-block,
-.rm-block-children,
-.roam-block-container {
   .rm-not-focused {
     /* regular block */
     background-color: transparent;

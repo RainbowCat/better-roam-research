@@ -37,28 +37,28 @@
     &.rm-graph-dropdown {
       // graph menu
       .menu-title {
-        color: blue;
+        color: $palette_theme;
       }
       .menu-item {
-        color: red;
+        color: $palette_accent;
       }
       .setting {
         a {
-          color: blue;
+          color: $palette_theme;
         }
         &:hover {
-          color: red;
+          color: $palette_accent;
         }
       }
       .signout {
-        color: blue;
+        color: $palette_theme;
       }
     }
     // code-area language menu
     background-color: var(--bg--popover) !important;
     color: var(--popover-contrast);
     .bp3-menu-item {
-      color: white;
+      color: $palette_white;
     }
   }
 }
