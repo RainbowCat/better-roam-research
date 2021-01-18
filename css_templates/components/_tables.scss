@@ -1,0 +1,6 @@
+/*--- Table ---*/
+.roam-table th,
+.roam-table td,
+.roam-table tr {
+  border: 1px solid setContrast($palette_theme);
+}

@@ -1,0 +1,84 @@
+// .bp3-button:not(.bp3-intent-primary) {
+//   color: $c2) !important;
+// }
+
+// iframe {
+//   border: none !important;
+// }
+
+// .loading-astrolabe {
+//   position: absolute !important;
+//   width: 80px !important;
+//   height: 80px !important;
+//   opacity: 0.3 !important;
+//   top: calc(50% - 40px) !important;
+//   left: calc(50% - 40px) !important;
+// }
+
+// #roam-sidebar-logo {
+//   display: none !important;
+// }
+
+// .CodeMirror {
+//   font-size: 13px !important;
+// }
+
+// .bp3-icon-small {
+//   padding-left: 24px !important;
+// }
+
+// .rm-block-text {
+//   max-width: 660px !important;
+//   font-size: $font-size) !important;
+// }
+
+// .block-bullet-view {
+//   margin-bottom: 3px !important;
+// }
+
+// .controls {
+//   .simple-bullet-outer {
+//     margin-top: 4px !important;
+//   }
+// }
+
+// .block-border-left {
+//   border-left-color: $subtle-border-color) !important;
+// }
+
+//later
+// .rm-find-or-create-wrapper .rm-menu-item .rm-search-list-item {
+//   color: $c2) !important;
+// }
+
+// .rm-search-path-results {
+//   background-color: $popup-background-color) !important;
+//   li {
+//     color: $c1) !important;
+//   }
+// }
+
+// later Mobile bar
+// #rm-mobile-bar {
+//   background-color: $main-area-background-color) !important;
+//   &[style*="bottom: 0px"] {
+//     padding-bottom: env(safe-area-inset-bottom);
+//     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 15px, rgba(0, 0, 0, 0.1) 0px 0px 50px !important;
+//   }
+// }
+
+/* Credits */
+.roam-topbar > div > div:last-child ul.bp3-menu:after {
+  content: "theme by @RainbowCat 🍀";
+  border: 1px solid $palette_white;
+  border-radius: 10px;
+  // width: 160px;
+  display: inline-block;
+  font-size: 13px;
+  line-height: 1.4;
+  padding: 7px;
+  margin-top: 5px;
+  // opacity: 0.8;
+  color: $palette_white;
+  text-align: right;
+}

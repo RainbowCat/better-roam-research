@@ -1,0 +1,88 @@
+/*------------------------------------
+# POPUPS
+------------------------------------*/
+// all popoevers
+.bp3-popover {
+  @include popups;
+  & > &-content {
+    @include popups;
+  }
+  & &-arrow {
+    &-fill {
+      @include popups;
+    }
+    &-border {
+      // fill: $popover-contrast; //tiny border
+      fill: none;
+    }
+  }
+  .bp3-button {
+    // tag selection buttons in page filter
+    // add dimension to buttons
+    @include popups_buttons;
+  }
+}
+
+// menus //TODO add variables
+.roam-body .roam-app {
+  .bp3-menu,
+  .roam-sidebar-container .bp3-menu {
+    @include popups;
+    &.rm-graph-dropdown {
+      // graph menu
+      .menu-title {
+        color: $palette_theme;
+      }
+      .menu-item {
+        color: $palette_accent;
+      }
+      .setting {
+        a {
+          color: $palette_theme;
+        }
+        &:hover {
+          color: $palette_accent;
+        }
+      }
+      .signout {
+        color: $palette_theme;
+      }
+    }
+    // code-area language menu
+    @include popups;
+    .bp3-menu-item {
+      @include popups_selected-item;
+    }
+  }
+}
+.bp3-elevation-3 {
+  // slash menu
+  @include popups;
+  .dont-unfocus-block[style*="background"] {
+    @include popups_selected-item;
+  }
+}
+
+// later Popups
+
+// .bp3-menu,
+// .bp3-popover .bp3-popover-content {
+//   background-color: $popup-background-color) !important;
+// }
+
+// .bp3-popover .bp3-popover-arrow-fill {
+//   fill: $popup-background-color) !important;
+// }
+
+// .bp3-menu,
+// .bp3-popover,
+// .bp3-popover-content,
+// .roam-body .roam-app .roam-sidebar-container .rm-graph-dropdown a {
+//   color: $c1) !important;
+//   div > div > .flex-h-box div > div > span,
+//   div > div > .flex-h-box div > div > strong,
+//   div > div > div > button,
+//   > ul > div {
+//     color: $c1) !important;
+//   }
+// }
