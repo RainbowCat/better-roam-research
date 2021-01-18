@@ -1,17 +1,88 @@
-/* Error: expected ";".
- *    ,
- * 53 |   color: $c1) !important;
- *    |             ^
- *    '
- *   components/typography.scss 53:13  root stylesheet */
+/*------------------------------------
+# TEXT
+------------------------------------*/
+.roam-body .roam-app h1,
+.roam-body .roam-app .rm-block-main {
+  color: var(--text-color);
+}
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected ";".\a    \2577 \a 53 \2502    color: $c1) !important;\a    \2502              ^\a    \2575 \a   components/typography.scss 53:13  root stylesheet';
+.rm-title-display,
+.rm-title-textarea,
+.roam-log-page h1.level2 {
+  height: auto !important;
+  line-height: 1.5 !important;
+  font-size: 26px !important;
+  font-weight: 600 !important;
+}
+
+.rm-heading-level-1 > .rm-block-main span {
+  margin-top: -2px !important;
+}
+.rm-heading-level-1 > .rm-block-main div,
+.rm-heading-level-1 > .rm-block-main textarea {
+  font-size: 22px !important;
+  line-height: 1.5 !important;
+  font-weight: 600 !important;
+}
+
+.rm-heading-level-2 > .rm-block-main span {
+  margin-top: -2px !important;
+}
+.rm-heading-level-2 > .rm-block-main div,
+.rm-heading-level-2 > .rm-block-main textarea {
+  font-size: 20px !important;
+  line-height: 1.5 !important;
+  font-weight: 600 !important;
+}
+
+.rm-heading-level-3 > .rm-block-main span {
+  margin-top: -1px !important;
+}
+.rm-heading-level-3 > .rm-block-main div,
+.rm-heading-level-3 > .rm-block-main textarea {
+  font-size: 18px !important;
+  line-height: 1.5 !important;
+}
+
+.rm-title-untitled,
+#block-input-ghost > span,
+textarea::placeholder {
+  color: var(--color-subtle) !important;
+}
+
+.rm-page-ref-tag {
+  color: #9099a1 !important;
+}
+
+span.checkmark {
+  top: -2px;
+}
+
+.rm-embed-container {
+  border-radius: 6px !important;
+}
+
+.rm-reference-item {
+  background: blue !important;
+  border: 1px solid var(--color-subtle) !important;
+  border-radius: 6px !important;
+  padding: 8px 10px 8px 2px !important;
+}
+.rm-reference-item .rm-block-text {
+  font-size: 18px !important;
+}
+
+.rm-full-width {
+  margin-right: 0 !important;
+}
+
+.rm-block-ref {
+  border-bottom: 0.5px solid var(--color-subtle) !important;
+}
+.rm-block-ref:hover {
+  background: red !important;
+}
+
+.rm-reference-main div > strong {
+  color: gray !important;
 }

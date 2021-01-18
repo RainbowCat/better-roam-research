@@ -17,38 +17,38 @@
 .roam-log-page h1.level2 {
   height: auto !important;
   line-height: 1.5 !important;
-  font-size: $title-size) !important;
+  font-size: var(--title-size) !important;
   font-weight: 600 !important;
 }
 
 .rm-heading-level-1 > .rm-block-main span {
-  line-height: $heading1-size);
-  margin-top: $heading1-margin) !important;
+  line-height: var(--heading1-size);
+  margin-top: var(--heading1-margin) !important;
 }
 .rm-heading-level-1 > .rm-block-main div,
 .rm-heading-level-1 > .rm-block-main textarea {
-  font-size: $heading1-size) !important;
+  font-size: var(--heading1-size) !important;
   line-height: 1.5 !important;
   font-weight: 600 !important;
 }
 
 .rm-heading-level-2 > .rm-block-main span {
-  line-height: $heading2-size);
-  margin-top: $heading2-margin) !important;
+  line-height: var(--heading2-size);
+  margin-top: var(--heading2-margin) !important;
 }
 .rm-heading-level-2 > .rm-block-main div,
 .rm-heading-level-2 > .rm-block-main textarea {
-  font-size: $heading2-size) !important;
+  font-size: var(--heading2-size) !important;
   line-height: 1.5 !important;
   font-weight: 600 !important;
 }
 
 .rm-heading-level-3 > .rm-block-main span {
-  line-height: $heading3-size);
-  margin-top: $heading3-margin) !important;
+  line-height: var(--heading3-size);
+  margin-top: var(--heading3-margin) !important;
 }
 .rm-heading-level-3 > .rm-block-main div,
 .rm-heading-level-3 > .rm-block-main textarea {
-  font-size: $heading3-size) !important;
+  font-size: var(--heading3-size) !important;
   line-height: 1.5 !important;
 }

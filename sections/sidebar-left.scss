@@ -1,16 +1,6 @@
-@use "utils";
-@use "vars";
 /*------------------------------------
 # LEFT SIDEBAR
 ------------------------------------*/
-.roam-body .roam-app .roam-sidebar-content {
-  --bg--left: vars.$palette_black;
-  --bg--shortcuts: linear-gradient(green, black);
-  --color-divline: white;
-  --color-text: pink;
-  --color-text-hover: red;
-}
-
 /*** LAYOUT ***/
 .roam-body .roam-app .roam-sidebar-content {
   // hide logo
@@ -74,8 +64,7 @@
 
 /*** APPEARANCE ***/
 .roam-body .roam-app .roam-sidebar-content {
-  background: var(--bg--left);
-
+  .top-row,
   .top-row .rm-db-title,
   .log-button,
   .starred-pages-wrapper .starred-pages .page {

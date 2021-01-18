@@ -1,6 +1,13 @@
 /*------------------------------------
 # TEXT
 ------------------------------------*/
+.roam-body .roam-app {
+  h1,
+  .rm-block-main {
+    color: var(--text-color);
+  }
+}
+
 .rm-title-display,
 .rm-title-textarea,
 .roam-log-page h1.level2 {
@@ -45,10 +52,148 @@
   }
 }
 
-.level2 {
-  font-weight: inherit !important;
+// div.roam-article {
+//   .rm-level1 span > a.rm-alias--external:after {
+//     background-size: 20px 20px;
+//     width: 20px;
+//     height: 20px;
+//   }
+//   .rm-level2 span > a.rm-alias--external:after {
+//     background-size: 18px 18px;
+//     width: 18px;
+//     height: 18px;
+//   }
+//   .rm-level3 span > a.rm-alias--external:after {
+//     background-size: 16px 16px;
+//     width: 16px;
+//     height: 16px;
+//   }
+// }
+
+// Block references
+// .rm-inline-references {
+//   background-color: $secondary-background-color) !important;
+//   border-left-color: $c3) !important;
+//   border-left-width: 3px !important;
+//   border-radius: 3px !important;
+// }
+
+// .block-ref-count-button.rm-active {
+//   background-color: $secondary-background-color) !important;
+// }
+
+// Inline parentheticals
+
+// .rm-paren {
+//   color: $c1) !important;
+//   background-color: $secondary-background-color) !important;
+//   border: 1px solid $subtle-border-color) !important;
+// }
+// .rm-paren--closed {
+//   color: $c1) !important;
+//   path {
+//     fill: $c1) !important;
+//   }
+// }
+
+// Block quotes
+// .rm-bq {
+//   background-color: $secondary-background-color) !important;
+//   border-left-color: $c3) !important;
+//   border-left-width: 3px !important;
+//   border-radius: 3px !important;
+//   padding: 8px 14px !important;
+// }
+
+// .rm-page-ref-link-color,
+// .rm-page-ref--link,
+// .rm-ref-page-view-title > a,
+// .rm-alias--external {
+//   color: $accent-color) !important;
+// }
+
+// .rm-page-ref-brackets {
+//   color: $brackets-color) !important;
+// }
+
+// .bp3-input {
+//   color: $c1) !important;
+//   background: $main-area-background-color) !important;
+//   &::placeholder {
+//     color: $c4) !important;
+//   }
+// }
+
+.rm-title-untitled,
+#block-input-ghost > span,
+textarea::placeholder {
+  color: var(--color-subtle) !important;
 }
 
-h1 {
-  color: $c1) !important;
+// body,
+// div,
+// textarea,
+// .level2 {
+//   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+//     "Open Sans", "Helvetica Neue", sans-serif !important;
+// }
+
+.rm-page-ref-tag {
+  color: #9099a1 !important;
+}
+
+span.checkmark {
+  top: -2px;
+}
+
+// .roam-log-container .roam-log-page {
+//   border-top: 1px solid $subtle-border-color) !important;
+//   &:first-child {
+//     min-height: 0 !important;
+//     border-top: none !important;
+//   }
+// }
+
+.rm-embed-container {
+  border-radius: 6px !important;
+}
+
+.rm-reference-item {
+  background: blue !important;
+  border: 1px solid var(--color-subtle) !important;
+  border-radius: 6px !important;
+  padding: 8px 10px 8px 2px !important;
+  .rm-block-text {
+    font-size: 18px !important;
+  }
+}
+
+.rm-full-width {
+  margin-right: 0 !important;
+}
+
+// Overrides to dark theme text, for popovers that remain white
+// .bp3-popover-content {
+//   div > div > .flex-h-box div > div > span,
+//   div > div > .flex-h-box div > div > strong,
+//   div > div > div > button,
+//   > ul > div {
+//     color: #182026 !important;
+//   }
+// }
+// .DayPicker {
+//   color: #182026 !important;
+// }
+
+.rm-block-ref {
+  &:hover {
+    background: red !important;
+  }
+  border-bottom: 0.5px solid var(--color-subtle) !important;
+}
+
+.rm-reference-main {
+  div > strong {
+    color: hsl(0, 0%, 50%) !important;
+  }
 }

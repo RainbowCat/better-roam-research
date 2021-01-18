@@ -1,82 +1,82 @@
-/*------------------------------------
-# BLOCKS
-------------------------------------*/
-$rm-block-selector: ".rm-block, .roam-block, .roam-block-container";
+// /*------------------------------------
+// # BLOCKS
+// ------------------------------------*/
+// $rm-block-selector: ".rm-block, .roam-block, .roam-block-container";
 
-@mixin setBorder($color: $palette-theme, $radius: 5) {
-  padding: 5%;
-  border: 1px solid $color !important;
-  border-radius: $radius;
-}
-
-/* block highlights */
-@mixin block_regular {
-  //todo
-  background-color: transparent;
-}
-@mixin block_focused {
-  //todo
-  padding: 0px;
-  // @include setBorder(opacify($accent-darker), 0.6), 5);
-}
-
-@mixin block_selected-main {
-  /* selected block in main edit area */
-  background-color: $palette-accent-darker;
-}
-@mixin block_selected-linked {
-  /* selected block in linked referenced */
-  background-color: $block-highlight-bg;
-}
-@mixin block_selected-embed {
-  /* embed block highlight */
-  background-color: $embed-container-bg;
-}
-
-/* block highlights */
-#{$rm-block-selector} {
-  /* regular block */
-  .rm-not-focused {
-    @include block_regular;
-  }
-  /* focused block */
-  .rm-focused {
-    @include block_focused; /* i.e. when tyging inside */
-    // maybe style highlight child blocks too?
-    // & #{$rm-block-selector} {
-  }
-
-  /* selected block in main edit area */
-  .block-highlight-blue {
-    @include block_selected-main;
-  }
-  .block-highlight-blue {
-    /* block selection */
-    background-color: $block-highlight);
-  }
-  /* selected block in linked referenced */
-  .block-highlight-yellow {
-    /* block highlight */
-    @include block_selected-linked;
-  }
-  .rm-embed-container {
-    /* embed block highlight */
-    @include block_selected-embed;
-  }
-}
-
-// Selection
-.block-highlight-blue {
-  background-color: $selection-color) !important;
-}
-
-//TODO
-/*--- Block References ---*/
-// .rm-block-ref {
-//   /* linked refs */
-//   cursor: alias;
-//   border-bottom: 1px solid $block-ref-border-bottom);
+// @mixin setBorder($color: $palette-theme, $radius: 5) {
+//   padding: 5%;
+//   border: 1px solid $color !important;
+//   border-radius: $radius;
 // }
-// .rm-block-ref:hover {
-//   background-color: $block-ref-hover-bg);
+
+// /* block highlights */
+// @mixin block_regular {
+//   //todo
+//   background-color: transparent;
 // }
+// @mixin block_focused {
+//   //todo
+//   padding: 0px;
+//   // @include setBorder(opacify($accent-darker), 0.6), 5);
+// }
+
+// @mixin block_selected-main {
+//   /* selected block in main edit area */
+//   background-color: $palette-accent-darker;
+// }
+// @mixin block_selected-linked {
+//   /* selected block in linked referenced */
+//   background-color: $block-highlight-bg;
+// }
+// @mixin block_selected-embed {
+//   /* embed block highlight */
+//   background-color: $embed-container-bg;
+// }
+
+// /* block highlights */
+// #{$rm-block-selector} {
+//   /* regular block */
+//   .rm-not-focused {
+//     @include block_regular;
+//   }
+//   /* focused block */
+//   .rm-focused {
+//     @include block_focused; /* i.e. when tyging inside */
+//     // maybe style highlight child blocks too?
+//     // & #{$rm-block-selector} {
+//   }
+
+//   /* selected block in main edit area */
+//   .block-highlight-blue {
+//     @include block_selected-main;
+//   }
+//   .block-highlight-blue {
+//     /* block selection */
+//     background-color: $block-highlight);
+//   }
+//   /* selected block in linked referenced */
+//   .block-highlight-yellow {
+//     /* block highlight */
+//     @include block_selected-linked;
+//   }
+//   .rm-embed-container {
+//     /* embed block highlight */
+//     @include block_selected-embed;
+//   }
+// }
+
+// // Selection
+// .block-highlight-blue {
+//   background-color: $selection-color) !important;
+// }
+
+// //TODO
+// /*--- Block References ---*/
+// // .rm-block-ref {
+// //   /* linked refs */
+// //   cursor: alias;
+// //   border-bottom: 1px solid $block-ref-border-bottom);
+// // }
+// // .rm-block-ref:hover {
+// //   background-color: $block-ref-hover-bg);
+// // }

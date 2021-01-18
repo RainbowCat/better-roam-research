@@ -1,17 +1,53 @@
-/* Error: expected ";".
- *    ,
- * 20 |   font-size: $title-size) !important;
- *    |                         ^
- *    '
- *   hacks/fixed-text.scss 20:25  root stylesheet */
+:root {
+  --title-size: 40px;
+  --heading1-size: 22px;
+  --heading1-margin: -2px;
+  --heading2-size: 20px;
+  --heading2-margin: -2px;
+  --heading3-size: 18px;
+  --heading3-margin: -1px;
+}
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected ";".\a    \2577 \a 20 \2502    font-size: $title-size) !important;\a    \2502                          ^\a    \2575 \a   hacks/fixed-text.scss 20:25  root stylesheet';
+.rm-title-display,
+.rm-title-textarea,
+.roam-log-page h1.level2 {
+  height: auto !important;
+  line-height: 1.5 !important;
+  font-size: var(--title-size) !important;
+  font-weight: 600 !important;
+}
+
+.rm-heading-level-1 > .rm-block-main span {
+  line-height: var(--heading1-size);
+  margin-top: var(--heading1-margin) !important;
+}
+
+.rm-heading-level-1 > .rm-block-main div,
+.rm-heading-level-1 > .rm-block-main textarea {
+  font-size: var(--heading1-size) !important;
+  line-height: 1.5 !important;
+  font-weight: 600 !important;
+}
+
+.rm-heading-level-2 > .rm-block-main span {
+  line-height: var(--heading2-size);
+  margin-top: var(--heading2-margin) !important;
+}
+
+.rm-heading-level-2 > .rm-block-main div,
+.rm-heading-level-2 > .rm-block-main textarea {
+  font-size: var(--heading2-size) !important;
+  line-height: 1.5 !important;
+  font-weight: 600 !important;
+}
+
+.rm-heading-level-3 > .rm-block-main span {
+  line-height: var(--heading3-size);
+  margin-top: var(--heading3-margin) !important;
+}
+
+.rm-heading-level-3 > .rm-block-main div,
+.rm-heading-level-3 > .rm-block-main textarea {
+  font-size: var(--heading3-size) !important;
+  line-height: 1.5 !important;
 }

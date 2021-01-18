@@ -1,17 +1,28 @@
-/* Error: expected ";".
- *    ,
- * 11 |       border-bottom: 1px solid $subtle-border-color) !important;
- *    |                                                    ^
- *    '
- *   sections/sidebar-right.scss 11:52  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected ";".\a    \2577 \a 11 \2502        border-bottom: 1px solid $subtle-border-color) !important;\a    \2502                                                     ^\a    \2575 \a   sections/sidebar-right.scss 11:52  root stylesheet';
+#right-sidebar {
+  border: none !important;
+  transition: none !important;
+  overflow: hidden !important;
+}
+#right-sidebar h1 {
+  font-size: 18px !important;
+}
+#right-sidebar #roam-right-sidebar-content {
+  margin-left: -6px !important;
+}
+#right-sidebar #roam-right-sidebar-content > div[style] {
+  border-bottom: 1px solid var(--color-subtle) !important;
+}
+#right-sidebar #roam-right-sidebar-content .sidebar-content > div > div[style*=border-bottom] {
+  border-bottom: 1px solid var(--color-subtle) !important;
+}
+#right-sidebar .hoverparent,
+#right-sidebar .react-resizable {
+  max-width: 100% !important;
+}
+#right-sidebar .hoverparent img,
+#right-sidebar .react-resizable img {
+  max-width: 100% !important;
+}
+#right-sidebar .rm-block-text {
+  font-size: 14.5px !important;
 }

@@ -1,45 +1,39 @@
 /*------------------------------------
 # POPUPS
 ------------------------------------*/
-
-:root {
-  --bg--popover: pink;
-  --bg--popover-hover: red;
-  --bg--popover-contrast: white;
-}
-
 // all popoevers
 .bp3-popover {
-  color: $theme);
-  background: $bg--popover);
+  color: var(--text-popover);
+  background: var(--bg--popover);
   & > &-content {
-    background-color: $bg--popover);
-    color: $bg--popover-contrast);
+    background-color: var(--bg--popover);
+    color: var(--bg--popover-contrast);
   }
   & &-arrow {
     &-fill {
-      fill: $bg--popover); // background
+      fill: var(--bg--popover); // background
     }
     &-border {
-      fill: $bg--popover-contrast); //tiny border
+      fill: var(--bg--popover-contrast); //tiny border
     }
   }
   .bp3-button {
     // tag selection buttons in page filter
-    background: radial-gradient($bg--popover), white); // add dimension to buttons
-    color: $bg--popover-contrast);
+    // add dimension to buttons
+    background: var(--page-filter-btns-text);
+    color: var(--page-filter-btns-bg);
     &:hover {
-      color: blue !important; //TODO make variable
-      background: radial-gradient($bg--popover), black);
+      color: var(--page-filter-btns-text-hover) !important;
+      background: var(--page-filter-btns-bg-hover);
     }
   }
 }
 
-// menus
+// menus //TODO add variables
 .roam-body .roam-app {
   .bp3-menu,
   .roam-sidebar-container .bp3-menu {
-    background: pink;
+    background: var(--bg--popover);
     &.rm-graph-dropdown {
       // graph menu
       .menu-title {
@@ -61,8 +55,8 @@
       }
     }
     // code-area language menu
-    background-color: $bg--popover) !important;
-    color: $bg--popover-contrast);
+    background-color: var(--bg--popover) !important;
+    color: var(--bg--popover-contrast);
     .bp3-menu-item {
       color: white;
     }
@@ -70,9 +64,33 @@
 }
 .bp3-elevation-3 {
   // slash menu
-  background-color: $bg--popover) !important;
-  color: $bg--popover-contrast);
+  background-color: var(--bg--popover) !important;
+  color: var(--bg--popover-contrast);
   .dont-unfocus-block[style*="background"] {
-    background-color: $bg--popover-hover) !important;
+    background-color: var(--bg--popover-hover) !important;
   }
 }
+
+// later Popups
+
+// .bp3-menu,
+// .bp3-popover .bp3-popover-content {
+//   background-color: var(--popup-background-color) !important;
+// }
+
+// .bp3-popover .bp3-popover-arrow-fill {
+//   fill: var(--popup-background-color) !important;
+// }
+
+// .bp3-menu,
+// .bp3-popover,
+// .bp3-popover-content,
+// .roam-body .roam-app .roam-sidebar-container .rm-graph-dropdown a {
+//   color: var(--c1) !important;
+//   div > div > .flex-h-box div > div > span,
+//   div > div > .flex-h-box div > div > strong,
+//   div > div > div > button,
+//   > ul > div {
+//     color: var(--c1) !important;
+//   }
+// }

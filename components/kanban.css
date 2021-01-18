@@ -1,17 +1,44 @@
-/* Error: expected ";".
- *    ,
- * 15 |       background: $secondary-background-color) !important;
- *    |                                              ^
- *    '
- *   components/kanban.scss 15:46  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected ";".\a    \2577 \a 15 \2502        background: $secondary-background-color) !important;\a    \2502                                               ^\a    \2575 \a   components/kanban.scss 15:46  root stylesheet';
+/*------------------------------------
+# KANBAN
+------------------------------------*/
+.kanban-board {
+  max-width: 100%;
+  padding: 2px;
+  border: 1px solid var(--kanban-border);
+  border-radius: var(--roundness);
+  background: var(--bg-kanban);
+}
+.kanban-board .kanban-column {
+  border-radius: var(--roundness);
+  padding: 2px;
+  margin: 2px;
+}
+.kanban-board .kanban-column:not([style*=background]) {
+  background: transparent;
+}
+.kanban-board .kanban-column[style*=background] {
+  background: var(--bg-kanban-col-drag);
+}
+.kanban-board .kanban-column .kanban-title {
+  text-align: center;
+  border-bottom: 1px solid var(--kanban-div);
+  padding: 2px 8px;
+  min-height: 31px;
+  max-height: 31px;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.kanban-board .kanban-column .kanban-card {
+  background: var(--bg-kanban-card);
+  box-shadow: 0px 4px 7px -1px var(--bg-kanban-card-shadow);
+  border-radius: var(--roundness);
+  border: 1px solid var(--kanban-div);
+  padding: 6px 10px;
+  margin: 0px 6px 12px;
+  font-size: 14px;
+}
+.kanban-board .kanban-column .kanban-card .check-container {
+  margin-bottom: 8px;
 }

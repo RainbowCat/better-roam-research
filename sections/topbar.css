@@ -1,17 +1,113 @@
-/* Error: expected ";".
- *    ,
- * 45 |       left: $searchbar-left);
- *    |                            ^
- *    '
- *   sections/topbar.scss 45:28  root stylesheet */
+/*------------------------------------
+# TOPBAR
+------------------------------------*/
+.roam-topbar {
+  background: var(--bg--topbar);
+}
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected ";".\a    \2577 \a 45 \2502        left: $searchbar-left);\a    \2502                             ^\a    \2575 \a   sections/topbar.scss 45:28  root stylesheet';
+.roam-topbar .flex-h-box > div[style^=flex]:not([class]) {
+  display: none;
+}
+
+/* make search popover */
+.roam-topbar > .flex-h-box .rm-find-or-create-wrapper input#find-or-create-input:focus,
+.roam-topbar > .flex-h-box .rm-find-or-create-wrapper .bp3-overlay {
+  opacity: 1 !important;
+  position: fixed !important;
+  left: var(--searchbar-left);
+  /* place at front of page */
+  z-index: 999999;
+  /* center */
+  transform: translate(-50%, 0);
+}
+.roam-topbar > .flex-h-box .rm-find-or-create-wrapper input#find-or-create-input:focus {
+  box-sizing: content-box;
+  top: var(--searchbar-top);
+  height: var(--searchbar-height) !important;
+  width: var(--searchbar-width) !important;
+  font-size: var(--searchbar-font);
+  padding: var(--searchbar-padding-tb) var(--searchbar-padding-lr);
+}
+.roam-topbar > .flex-h-box .rm-find-or-create-wrapper .bp3-overlay {
+  top: calc(var(--searchbar-top) + var(--searchbar-height) + 2 * var(--searchbar-padding-tb));
+  width: calc(var(--searchbar-width) + 2 * var(--searchbar-padding-lr) + 2px);
+}
+.roam-topbar > .flex-h-box .rm-find-or-create-wrapper .bp3-overlay > .bp3-transition-container {
+  transform: none !important;
+}
+.roam-topbar > .flex-h-box .rm-find-or-create-wrapper input#find-or-create-input:focus {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 200vh rgba(0, 0, 0, 0.07);
+  border-radius: 10px 10px 0px 0px;
+}
+.roam-topbar > .flex-h-box .rm-find-or-create-wrapper .bp3-overlay .bp3-popover {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 200vh rgba(0, 0, 0, 0.07);
+  box-shadow: none;
+}
+.roam-topbar > .flex-h-box .rm-find-or-create-wrapper .bp3-overlay .bp3-popover, .roam-topbar > .flex-h-box .rm-find-or-create-wrapper .bp3-overlay .bp3-popover > .bp3-popover-content, .roam-topbar > .flex-h-box .rm-find-or-create-wrapper .bp3-overlay .bp3-popover > .bp3-popover-content > .bp3-menu, .roam-topbar > .flex-h-box .rm-find-or-create-wrapper .bp3-overlay .bp3-popover > .bp3-popover-content > .bp3-menu > .rm-menu-item:last-child {
+  border-radius: 0px 0px 10px 10px !important;
+}
+
+/* make all elements look like a button */
+.roam-topbar .flex-h-box {
+  justify-content: center;
+}
+.roam-topbar .flex-h-box > div,
+.roam-topbar .flex-h-box > span {
+  height: var(--icons-size);
+  width: var(--icons-size);
+  margin: 5px;
+}
+.roam-topbar .flex-h-box .rm-saving-icon {
+  height: var(--icons-size);
+  width: var(--icons-size);
+  margin: 0px;
+  padding: 0px;
+  border-radius: 3px;
+}
+.roam-topbar .flex-h-box .rm-saving-inner-icon {
+  height: 10px !important;
+  width: 10px !important;
+}
+.roam-topbar .flex-h-box .rm-find-or-create-wrapper {
+  flex: unset !important;
+}
+.roam-topbar .flex-h-box .rm-find-or-create-wrapper input#find-or-create-input {
+  opacity: 0;
+  z-index: 10000;
+  /* bring in front of icon to keep clickable */
+  width: var(--icons-size) !important;
+  height: var(--icons-size) !important;
+  padding: 0px;
+  margin: 0px;
+  cursor: pointer;
+}
+.roam-topbar .flex-h-box .rm-find-or-create-wrapper .bp3-icon-search.search-icon {
+  padding: 4px;
+  margin: 0px !important;
+}
+.roam-topbar .flex-h-box .bp3-button.bp3-minimal {
+  height: var(--icons-size);
+  width: var(--icons-size);
+  margin: 0px !important;
+}
+.roam-topbar .flex-h-box [class~=bp3-icon]:before,
+.roam-topbar .flex-h-box .bp3-button.bp3-minimal:before {
+  color: white;
+  background: transparent;
+}
+.roam-topbar .flex-h-box .rm-find-or-create-wrapper,
+.roam-topbar .flex-h-box [class~=bp3-icon]:not(.bp3-icon-filter):not(.bp3-icon-search),
+.roam-topbar .flex-h-box .bp3-button.bp3-minimal {
+  border-radius: 3px;
+  transition: none;
+  background: var(--icons-regular) !important;
+}
+.roam-topbar .flex-h-box .rm-find-or-create-wrapper:hover,
+.roam-topbar .flex-h-box [class~=bp3-icon]:not(.bp3-icon-filter):not(.bp3-icon-search):hover,
+.roam-topbar .flex-h-box .bp3-button.bp3-minimal:hover {
+  background: var(--icons-hover) !important;
 }

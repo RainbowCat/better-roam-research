@@ -1,17 +1,12 @@
-/* Error: expected ";".
- *   ,
- * 2 |   color: $c2) !important;
- *   |             ^
- *   '
- *   components/style.scss 2:13  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected ";".\a   \2577 \a 2 \2502    color: $c2) !important;\a   \2502              ^\a   \2575 \a   components/style.scss 2:13  root stylesheet';
+@charset "UTF-8";
+/* Credits */
+.roam-topbar > div > div:last-child ul.bp3-menu:after {
+  content: "theme by @RainbowCat 🍀";
+  width: 160px;
+  display: inline-block;
+  font-size: 13px;
+  line-height: 1.4;
+  padding: 7px;
+  opacity: 0.6;
+  color: var(--text-color);
 }

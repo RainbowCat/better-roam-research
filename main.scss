@@ -1,19 +1,25 @@
-@import "utils";
-@import "vars";
+@use "sass:color";
+@use "utils";
+// @import "vars";
+@import "palettes/alok.scss";
 
+@import "./sections/general-workspace.scss";
 @import "./sections/topbar.scss";
 @import "./sections/sidebar-left.scss";
 @import "./sections/sidebar-right.scss";
-@import "./sections/general-workspace.scss";
 
-@import "./hacks/layout.scss";
+@import "./sections/all-pages.scss";
 
 @import "./components/style.scss";
+@import "./components/typography.scss";
 @import "./components/bullets.scss";
 @import "./components/tags.scss";
+
+@import "./components/popups.scss";
+@import "./components/datepicker.scss";
+
 @import "./components/kanban.scss";
 @import "./components/tables.scss";
-@import "./components/datepicker.scss";
 
 @import "./hacks/fixed-text.scss";
 @import "./hacks/glyph.scss";
