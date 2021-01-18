@@ -84,28 +84,14 @@
 # POPUPS
 ------------------------------------*/
 // menus
-@mixin popup_menu($focus: none, $hover: none) {
-  background-color: $background--popover !important;
-  color: setContrast($background--popover);
-  @if $focus is not none {
-    #{$focus} {
-      background-color: $background--popover-hover !important;
-    }
-  }
-  @if $hover is not none {
-    #{$hover} {
-      background-color: $background--popover-hover;
-    }
-  }
-}
-
-@mixin popups {
+@mixin popups_general {
   //todo
   // color: $popover-contrast;
   // background: $bg--popover;
   // fill: $bg--popover;
 }
-@mixin popups_buttons {
+
+@mixin popups_buttons { // page-filter buttons
   // background: $page-filter-btns-text);
   // color: $page-filter-btns-bg);
   // &:hover {
@@ -113,6 +99,7 @@
   //   background: $page-filter-btns-bg-hover);
   // }
 }
+
 @mixin popups_selected-item {
   background-color: $bg--popover-hover !important;
   color: white;
@@ -123,7 +110,6 @@
 }
 
 @mixin menus_graph-dropdown {
-  
 }
 /*-------------------------
 # FEATURES
