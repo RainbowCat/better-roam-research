@@ -4,25 +4,25 @@
 @import "utils";
 @import "vars";
 
-@import "./sections/general-workspace.scss";
-@import "./sections/topbar.scss";
-@import "./sections/sidebar-left.scss";
-@import "./sections/sidebar-right.scss";
+@import "sections/general-workspace";
+@import "sections/topbar";
+@import "sections/sidebar-left";
+@import "sections/sidebar-right";
 
-@import "./sections/all-pages.scss";
+@import "sections/all-pages";
 
-@import "./components/style.scss";
-@import "./components/typography.scss";
-@import "./components/blocks.scss";
-@import "./components/bullets.scss";
-@import "./components/tags.scss";
+@import "components/style";
+@import "components/typography";
+@import "components/blocks";
+@import "components/bullets";
+@import "components/tags";
 
-@import "./components/popups.scss";
-@import "./components/datepicker.scss";
+@import "components/popups";
+@import "components/datepicker";
 
-@import "./components/kanban.scss";
-@import "./components/tables.scss";
+@import "components/kanban";
+@import "components/tables";
 
-@import "./hacks/fixed-text.scss";
-@import "./hacks/glyph.scss";
-@import "./hacks/shift-bullets.scss";
+@import "hacks/fixed-text";
+@import "hacks/glyph";
+@import "hacks/shift-bullets";

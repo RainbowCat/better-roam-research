@@ -31,7 +31,7 @@
 ------------------------------------*/
 :root {
   --bullet-color: #{$palette_accent};
-  --bullet-closed-border: 4px solid #{$palette_accent-lighter};
+  --bullet-closed-border: 4px solid #{$palette_accent-darker};
   --tree-vertline: 1px solid #{setContrast($palette_theme)};
   /*--bullet-position: ;*/
 }

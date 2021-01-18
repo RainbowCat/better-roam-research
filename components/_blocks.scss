@@ -43,13 +43,7 @@
   }
 }
 
-//TODO
-/*--- Block References ---*/
-// .rm-block-ref {
-//   /* linked refs */
-//   cursor: alias;
-//   border-bottom: 1px solid var(--block-ref-border-bottom);
-// }
-// .rm-block-ref:hover {
-//   background-color: var(--block-ref-hover-bg);
-// }
+// remove first level line
+.rm-level-1 > .block-border-left {
+  border-left: none !important;
+}
