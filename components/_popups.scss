@@ -3,18 +3,18 @@
 ------------------------------------*/
 // all popoevers
 .bp3-popover {
-  color: var(--text-popover);
+  color: var(--popover-contrast);
   background: var(--bg--popover);
   & > &-content {
     background-color: var(--bg--popover);
-    color: var(--bg--popover-contrast);
+    color: var(--popover-contrast);
   }
   & &-arrow {
     &-fill {
       fill: var(--bg--popover); // background
     }
     &-border {
-      fill: var(--bg--popover-contrast); //tiny border
+      fill: var(--popover-contrast); //tiny border
     }
   }
   .bp3-button {
@@ -56,7 +56,7 @@
     }
     // code-area language menu
     background-color: var(--bg--popover) !important;
-    color: var(--bg--popover-contrast);
+    color: var(--popover-contrast);
     .bp3-menu-item {
       color: white;
     }
@@ -65,7 +65,7 @@
 .bp3-elevation-3 {
   // slash menu
   background-color: var(--bg--popover) !important;
-  color: var(--bg--popover-contrast);
+  color: var(--popover-contrast);
   .dont-unfocus-block[style*="background"] {
     background-color: var(--bg--popover-hover) !important;
   }

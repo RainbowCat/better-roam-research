@@ -3,14 +3,14 @@
 # THEME
 ------------------------------------*/
 :root {
-  --color-subtle: rgba(42, 157, 144, 0.5);
-  --text-color: #fdf6ed;
-  --bg-main-color: #2a9d90;
-  --bg-secondary-color: #274754;
+  --color-subtle: rgba(40, 96, 164, 0.5);
+  --bg-main-color: #2860a4;
+  --bg-secondary-color: #5b93d7;
+  --text-color: #e9edef;
 }
 
 /*------------------------------------
-# general workspace
+# general layout
 ------------------------------------*/
 :root {
   --leftbar_width: 195px;
@@ -19,18 +19,52 @@
   --roundness: 5px;
 }
 
+/*------------------------------------
+# general appearance
+------------------------------------*/
+:root {
+  --bg--left: #1c4373;
+  --bg--topbar: #2860a4;
+  --bg--right: #5b93d7;
+  --right-title-color: #000010;
+}
+
+/*------------------------------------
+# text
+------------------------------------*/
+:root {
+  --bullet-color: #9dcee7;
+  --bullet-closed-border: 4px solid #cbebfb;
+  --tree-vertline: 1px solid #e9edef;
+  /*--bullet-position: ;*/
+}
+
+.checkmark {
+  --checkmark-top: -1px;
+  --checkmark-left: -2px;
+  --checkmark-height: 14px;
+  --checkmark-width: 14px;
+  --checkmark-border-radius: 4px;
+  --border-notdone: 1px solid #000010;
+  --bg-notdone: #e9edef;
+  --border-done: 1px solid #e9edef;
+  --bg-done: #9dcee7;
+  --symbol-color: #e9edef;
+  --symbol: "✔";
+}
+
+/*------------------------------------
+# components
+------------------------------------*/
 .roam-body .roam-app .roam-sidebar-content {
-  --bg--left: #212121;
-  --color-divline: black;
-  --color-text: #f4a462;
-  --color-text-hover: #e76e50;
+  --color-divline: #e9edef;
+  --color-text: #cbebfb;
+  --color-text-hover: #60a9cd;
 }
 
 .roam-body .roam-app .roam-topbar {
-  /*** LAYOUT ***/
+  --icons-placement: flex-end;
   --searchbar-height: 45px;
-  /*** AESTHETICS ***/
-  --bg--topbar: $palette_black;
   --searchbar-width: 500px;
   --searchbar-left: 55vw;
   --searchbar-top: 27vh;
@@ -52,15 +86,23 @@
 }
 
 /*------------------------------------
-# big components
+# components
 ------------------------------------*/
+:root {
+  --icons-bg-regular: #9dcee7;
+  --icons-bg-hover: #cbebfb;
+  --icon-color: #000010;
+  --icons-size: 24px;
+  --checkmark-notdone-color: #9dcee7;
+  --checkmark-done-color: #60a9cd;
+}
+
 .bp3-menu,
 .bp3-popover,
 .bp3-elevation-3 {
-  --bg--popover: #f4a462;
-  --bg--popover-hover: red;
-  --bg--popover-contrast: white;
-  --text-popover: #2a9d90;
+  --bg--popover: #9dcee7;
+  --bg--popover-hover: #cbebfb;
+  --popover-contrast: #000010;
   --page-filter-btns-text: var(--bg--popover-contrast);
   --page-filter-btns-bg: radial-gradient(var(--bg--popover), white);
   --page-filter-btns-text-hover: blue;
@@ -68,23 +110,12 @@
 }
 
 .kanban-board {
-  --bg-kanban-card: #2a9d90;
-  --bg-kanban-card-shadow: #142329;
-  --bg-kanban-col-drag: #274754;
+  --bg-kanban-card: #2860a4;
+  --bg-kanban-card-shadow: #1c4373;
+  --bg-kanban-col-drag: #5b93d7;
   --bg-kanban: transparent;
-  --kanban-div: white;
-  --kanban-border: white;
-}
-
-/*------------------------------------
-# small components
-------------------------------------*/
-:root {
-  --icons-regular: #e9c772;
-  --icons-hover: #f4a462;
-  --icons-size: 24px;
-  --checkmark-notdone-color: #2a9d90;
-  --checkmark-done-color: #f4a462;
+  --kanban-div: #e9edef;
+  --kanban-border: #e9edef;
 }
 
 /*------------------------------------
@@ -152,7 +183,7 @@
   background: var(--bg-main-color);
 }
 #app .roam-body .roam-app > div.flex-h-box > #right-sidebar {
-  background: var(--bg-right-color);
+  background: var(--bg--right);
 }
 
 /*------------------------------------
@@ -210,7 +241,7 @@
 
 /* make all elements look like a button */
 .roam-topbar .flex-h-box {
-  justify-content: center;
+  justify-content: var(--icons-placement);
 }
 .roam-topbar .flex-h-box > div,
 .roam-topbar .flex-h-box > span {
@@ -253,20 +284,24 @@
 }
 .roam-topbar .flex-h-box [class~=bp3-icon]:before,
 .roam-topbar .flex-h-box .bp3-button.bp3-minimal:before {
-  color: white;
+  color: var(--icon-color);
   background: transparent;
+}
+.roam-topbar .flex-h-box .bp3-icon-filter,
+.roam-topbar .flex-h-box .bp3-icon-search {
+  color: var(--icon-color) !important;
 }
 .roam-topbar .flex-h-box .rm-find-or-create-wrapper,
 .roam-topbar .flex-h-box [class~=bp3-icon]:not(.bp3-icon-filter):not(.bp3-icon-search),
 .roam-topbar .flex-h-box .bp3-button.bp3-minimal {
   border-radius: 3px;
   transition: none;
-  background: var(--icons-regular) !important;
+  background: var(--icons-bg-regular) !important;
 }
 .roam-topbar .flex-h-box .rm-find-or-create-wrapper:hover,
 .roam-topbar .flex-h-box [class~=bp3-icon]:not(.bp3-icon-filter):not(.bp3-icon-search):hover,
 .roam-topbar .flex-h-box .bp3-button.bp3-minimal:hover {
-  background: var(--icons-hover) !important;
+  background: var(--icons-bg-hover) !important;
 }
 
 /*------------------------------------
@@ -332,6 +367,17 @@
   transition: none !important;
   overflow: hidden !important;
 }
+#right-sidebar .hoverparent,
+#right-sidebar .react-resizable {
+  max-width: 100% !important;
+}
+#right-sidebar .hoverparent img,
+#right-sidebar .react-resizable img {
+  max-width: 100% !important;
+}
+#right-sidebar .window-headers div span {
+  color: var(--right-title-color);
+}
 #right-sidebar h1 {
   font-size: 18px !important;
 }
@@ -344,16 +390,27 @@
 #right-sidebar #roam-right-sidebar-content .sidebar-content > div > div[style*=border-bottom] {
   border-bottom: 1px solid var(--color-subtle) !important;
 }
-#right-sidebar .hoverparent,
-#right-sidebar .react-resizable {
-  max-width: 100% !important;
-}
-#right-sidebar .hoverparent img,
-#right-sidebar .react-resizable img {
-  max-width: 100% !important;
-}
 #right-sidebar .rm-block-text {
   font-size: 14.5px !important;
+}
+#right-sidebar [class~=bp3-icon]:before,
+#right-sidebar .bp3-button.bp3-minimal:before {
+  color: var(--icon-color);
+  background: transparent;
+}
+#right-sidebar .bp3-icon-filter,
+#right-sidebar .bp3-icon-search {
+  color: var(--icon-color) !important;
+}
+#right-sidebar [class~=bp3-icon]:not(.bp3-icon-filter):not(.bp3-icon-search),
+#right-sidebar .bp3-button.bp3-minimal {
+  border-radius: 3px;
+  transition: none;
+  background: var(--icons-bg-regular) !important;
+}
+#right-sidebar [class~=bp3-icon]:not(.bp3-icon-filter):not(.bp3-icon-search):hover,
+#right-sidebar .bp3-button.bp3-minimal:hover {
+  background: var(--icons-bg-hover) !important;
 }
 
 .rm-all-pages .table .rm-pages-row.rm-pages-row-header {
@@ -484,65 +541,246 @@
   line-height: 1.5 !important;
 }
 
-.rm-title-untitled,
-#block-input-ghost > span,
-textarea::placeholder {
-  color: var(--color-subtle) !important;
+/*---------------------------------- 
+    #BULLETS & NEST LINE
+------------------------------------*/
+.controls .opacity-none,
+.rm-block__controls .opacity-none {
+  opacity: 0.3;
 }
 
+.rm-bullet__inner {
+  /* bullet */
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  background-color: var(--bullet-color);
+}
+
+.rm-bullet.rm-bullet--closed .rm-bullet__inner,
+.sidebar-content .rm-bullet.rm-bullet--closed .rm-bullet__inner {
+  /* collapsed bullet */
+  border: var(--bullet-closed-border);
+}
+
+/* nest diagram line */
+.block-border-left {
+  border-left: var(--tree-vertline);
+}
+
+/*---------------------------------- 
+  #TODO 
+------------------------------------*/
+.check-container .checkmark {
+  /* todo */
+  position: absolute;
+  top: var(--checkmark-top);
+  left: var(--checkmark-left);
+  height: var(--checkmark-height);
+  border-radius: var(--checkmark-border-radius);
+  width: var(--checkmark-width);
+  border: var(--checkmark-border);
+  background-color: var(--checkmark-bg-color);
+}
+.check-container input:checked ~ .checkmark {
+  /* done */
+  border: var(--border-done);
+  background-color: var(--bg-done);
+}
+.check-container .checkmark:after {
+  /* done check symbol */
+  content: var(--symbol);
+  color: var(--symbol-color);
+  left: 0px;
+  top: -1px;
+  border: none;
+  transform: rotate(-10deg) scale(0.5);
+}
+
+:root {
+  --tag-font-color: #515355;
+  --tag-bg-color: #24272a;
+  --tag-border-radius: 10px;
+  --tag-border: 1px solid #35373996;
+  --tag-padding: 1px 5px 2px;
+  --tagHover-font-color: #484a4c;
+  --tagHover-bg-color: #2d3033;
+  --tagHover-border: 1px solid #44464887;
+}
+
+/*------------------------------------
+#
+# BIDIRECTIONAL LINKING
+#
+------------------------------------*/
+/*------------------------------------
+# TAGS
+------------------------------------*/
 .rm-page-ref-tag {
-  color: #9099a1 !important;
+  color: var(--tag-font-color) !important;
+  font-weight: 400;
+  background-color: var(--tag-bg-color);
+  border-radius: var(--tag-border-radius);
+  border: var(--tag-border);
+  padding: var(--tag-padding);
+  text-decoration: none;
 }
 
-span.checkmark {
-  top: -2px;
+.rm-page-ref-tag:hover {
+  color: var(--tagHover-font-color) !important;
+  font-weight: 400;
+  background-color: var(--tagHover-bg-color);
+  border-radius: var(--tag-border-radius);
+  border: var(--tagHover-border);
+  padding: var(--tag-padding);
+  text-decoration: none;
 }
 
-.rm-embed-container {
-  border-radius: 6px !important;
+/*------------------------------------
+# ATTRIBUTE
+------------------------------------*/
+/*------------------------------------
+# Page Links
+------------------------------------*/
+.rm-page-ref--link {
+  /* linked page name text */
+  color: #e9edef;
+}
+.rm-page-ref__brackets {
+  /* linked page brackes */
+  color: #e9edef;
 }
 
-.rm-reference-item {
-  background: blue !important;
-  border: 1px solid var(--color-subtle) !important;
-  border-radius: 6px !important;
-  padding: 8px 10px 8px 2px !important;
+/*------------------------------------
+# Alias
+------------------------------------*/
+.rm-alias .rm-alias--page {
+  /* internally linked alias */
+  color: #e9edef;
 }
-.rm-reference-item .rm-block-text {
-  font-size: 18px !important;
+.rm-alias .rm-alias--page:hover {
+  color: blue;
 }
-
-.rm-full-width {
-  margin-right: 0 !important;
+.rm-alias .rm-alias--external {
+  /* externally linked alias */
+  color: pink;
 }
-
-.rm-block-ref {
-  border-bottom: 0.5px solid var(--color-subtle) !important;
-}
-.rm-block-ref:hover {
-  background: red !important;
+.rm-alias .rm-alias--external:hover {
+  color: red;
 }
 
-.rm-reference-main div > strong {
-  color: gray !important;
+/*------------------------------------
+# Linked/Unlinked References
+------------------------------------*/
+.rm-reference-main {
+  --ref-header-color: white;
+  --ref-header-underline-color: red;
+  --ref-item-page-color: white;
+  --ref-item-parent-color: white;
+  --ref-item-bg: blue;
+  --ref-item-border-radius: var(--roundness);
+  --ref-item-border: 1px solid white;
 }
 
+.rm-reference-main {
+  border: 1px solid white;
+}
+.rm-reference-main .rm-reference-container > .flex-h-box > div[style*="color: rgb(206, 217, 224);"]:nth-child(3) strong {
+  /* "Linked/Unlinked References" reference block header */
+  color: var(--ref-header-color);
+  border-bottom: 1px solid var(--ref-header-underline-color);
+}
+.rm-reference-main .rm-ref-page-view {
+  /* linked page */
+}
+.rm-reference-main .rm-ref-page-view .rm-page__title {
+  color: var(--ref-item-page-color);
+}
+.rm-reference-main .rm-ref-page-view .parent-path-wrapper {
+  color: var(--ref-item-parent-color);
+}
+.rm-reference-main .rm-reference-item {
+  background: #60a9cd;
+  color: #000010;
+  /* footer reference box apperance */
+  background-color: var(--ref-item-bg);
+  border-radius: var(--ref-item-border-radius);
+  border: var(--ref-item-border);
+}
+
+/*------------------------------------
+# BLOCKS
+------------------------------------*/
+.rm-block,
+.roam-block,
+.rm-block-children,
+.roam-block-container {
+  --block-highlight-main: #9dcee7;
+  --block-highlight-linked: #9dcee7;
+  --block-highlight-linked-text: #000010;
+  --block-highlight-embed: #cbebfb;
+}
+
+.rm-block .rm-not-focused,
+.roam-block .rm-not-focused,
+.rm-block-children .rm-not-focused,
+.roam-block-container .rm-not-focused {
+  /* regular block */
+  background-color: transparent;
+}
+.rm-block .rm-focused,
+.roam-block .rm-focused,
+.rm-block-children .rm-focused,
+.roam-block-container .rm-focused {
+  /* focused block */
+  /* i.e. when tyging inside */
+  padding: 0px;
+}
+.rm-block .block-highlight-blue,
+.roam-block .block-highlight-blue,
+.rm-block-children .block-highlight-blue,
+.roam-block-container .block-highlight-blue {
+  /* selected block in main edit area */
+  background-color: var(--block-highlight-main);
+}
+.rm-block .block-highlight-yellow,
+.roam-block .block-highlight-yellow,
+.rm-block-children .block-highlight-yellow,
+.roam-block-container .block-highlight-yellow {
+  /* selected block in linked referenced */
+  background-color: var(--block-highlight-linked);
+}
+.rm-block .block-highlight-yellow span,
+.roam-block .block-highlight-yellow span,
+.rm-block-children .block-highlight-yellow span,
+.roam-block-container .block-highlight-yellow span {
+  color: var(--block-highlight-linked-text) !important;
+}
+.rm-block .rm-embed-container,
+.roam-block .rm-embed-container,
+.rm-block-children .rm-embed-container,
+.roam-block-container .rm-embed-container {
+  /* embed block highlight */
+  background-color: var(--block-highlight-embed);
+}
+
+/*--- Block References ---*/
 /*------------------------------------
 # POPUPS
 ------------------------------------*/
 .bp3-popover {
-  color: var(--text-popover);
+  color: var(--popover-contrast);
   background: var(--bg--popover);
 }
 .bp3-popover > .bp3-popover-content {
   background-color: var(--bg--popover);
-  color: var(--bg--popover-contrast);
+  color: var(--popover-contrast);
 }
 .bp3-popover .bp3-popover-arrow-fill {
   fill: var(--bg--popover);
 }
 .bp3-popover .bp3-popover-arrow-border {
-  fill: var(--bg--popover-contrast);
+  fill: var(--popover-contrast);
 }
 .bp3-popover .bp3-button {
   background: var(--page-filter-btns-text);
@@ -557,7 +795,7 @@ span.checkmark {
 .roam-body .roam-app .roam-sidebar-container .bp3-menu {
   background: var(--bg--popover);
   background-color: var(--bg--popover) !important;
-  color: var(--bg--popover-contrast);
+  color: var(--popover-contrast);
 }
 .roam-body .roam-app .bp3-menu.rm-graph-dropdown .menu-title,
 .roam-body .roam-app .roam-sidebar-container .bp3-menu.rm-graph-dropdown .menu-title {
@@ -586,7 +824,7 @@ span.checkmark {
 
 .bp3-elevation-3 {
   background-color: var(--bg--popover) !important;
-  color: var(--bg--popover-contrast);
+  color: var(--popover-contrast);
 }
 .bp3-elevation-3 .dont-unfocus-block[style*=background] {
   background-color: var(--bg--popover-hover) !important;

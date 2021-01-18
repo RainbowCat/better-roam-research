@@ -1,38 +1,15 @@
 /*------------------------------------
 # THEME
 ------------------------------------*/
-$gunmetal: hsla(199, 35%, 12%, 1);
-$charcoal: hsla(197, 37%, 24%, 1);
-$persian-green: hsla(173, 58%, 39%, 1);
-$seashell: hsla(34, 80%, 96%, 1);
-$orange-yellow-crayola: hsla(43, 73%, 68%, 1);
-$sandy-brown: hsla(27, 87%, 67%, 1);
-$burnt-sienna: hsla(12, 76%, 61%, 1);
-
-$palette_theme: $persian-green;
-$palette_theme-lighter: $charcoal;
-$palette_theme-darker: $gunmetal;
-
-$palette_contrast: $seashell;
-
-$palette_accent: $orange-yellow-crayola;
-$palette_accent-lighter: $sandy-brown;
-$palette_accent-darker: $burnt-sienna;
-
-$palette_black: hsl(0, 0%, 13%);
-$palette_white: hsl(0, 0%, 100%);
-$palette_grey: hsl(0, 0%, 96%);
-
 :root {
   --color-subtle: #{color.change($palette_theme, $alpha: 0.5)};
-  --text-color: #{$palette_contrast};
   --bg-main-color: #{$palette_theme};
   --bg-secondary-color: #{$palette_theme_lighter};
-  // linear-gradient(red, blue)
+  --text-color: #{setContrast($palette_theme)};
 }
 
 /*------------------------------------
-# general workspace
+# general layout
 ------------------------------------*/
 :root {
   --leftbar_width: 195px; // perfect size to fit "graph overview" horizontally
@@ -40,21 +17,55 @@ $palette_grey: hsl(0, 0%, 96%);
   --editor-margin: 20px 30px;
   --roundness: 5px;
 }
+/*------------------------------------
+# general appearance
+------------------------------------*/
+:root {
+  --bg--left: #{$palette_theme-darker};
+  --bg--topbar: #{$palette_theme};
+  --bg--right: #{$palette_theme-lighter};
+  --right-title-color: #{setContrast($palette_theme-lighter)};
+}
+/*------------------------------------
+# text
+------------------------------------*/
+:root {
+  --bullet-color: #{$palette_accent};
+  --bullet-closed-border: 4px solid #{$palette_accent-lighter};
+  --tree-vertline: 1px solid #{setContrast($palette_theme)};
+  /*--bullet-position: ;*/
+}
+
+.checkmark {
+  --checkmark-top: -1px;
+  --checkmark-left: -2px;
+  --checkmark-height: 14px;
+  --checkmark-width: 14px;
+  --checkmark-border-radius: 4px;
+
+  --border-notdone: 1px solid #{$palette_black};
+  --bg-notdone: #{opacify($palette_white, 0.5)};
+
+  --border-done: 1px solid #{$palette_white};
+  --bg-done: #{$palette_accent};
+
+  --symbol-color: #{setContrast($palette_theme)};
+  --symbol: "✔";
+}
+
+/*------------------------------------
+# components
+------------------------------------*/
 .roam-body .roam-app .roam-sidebar-content {
-  --bg--left: #{$palette_black};
   // --bg--shortcuts: linear-gradient(green, black);
-  --color-divline: #{utils.setContrast($palette_theme)};
+  --color-divline: #{setContrast($palette_theme)};
   --color-text: #{$palette_accent-lighter};
   --color-text-hover: #{$palette_accent-darker};
 }
 
 .roam-body .roam-app .roam-topbar {
-  /*** LAYOUT ***/
+  --icons-placement: flex-end;
   --searchbar-height: 45px;
-  /*** AESTHETICS ***/
-
-  --bg--topbar: $palette_black;
-
   --searchbar-width: 500px;
   --searchbar-left: 55vw;
   --searchbar-top: 27vh;
@@ -62,6 +73,7 @@ $palette_grey: hsl(0, 0%, 96%);
   --searchbar-padding-lr: 20px;
   --searchbar-font: 20px;
 }
+
 /*------------------------------------
 # sections
 ------------------------------------*/
@@ -75,15 +87,24 @@ $palette_grey: hsl(0, 0%, 96%);
 }
 
 /*------------------------------------
-# big components
+# components
 ------------------------------------*/
+:root {
+  --icons-bg-regular: #{$palette_accent};
+  --icons-bg-hover: #{$palette_accent-lighter};
+  --icon-color: #{setContrast($palette_accent)};
+  --icons-size: 24px;
+
+  --checkmark-notdone-color: #{$palette_accent};
+  --checkmark-done-color: #{$palette_accent-darker};
+}
+
 .bp3-menu,
 .bp3-popover,
 .bp3-elevation-3 {
-  --bg--popover: #{$palette_accent-lighter};
-  --bg--popover-hover: red;
-  --bg--popover-contrast: white;
-  --text-popover: #{$palette_theme};
+  --bg--popover: #{$palette_accent};
+  --bg--popover-hover: #{$palette_accent-lighter};
+  --popover-contrast: #{setContrast($palette_accent)};
 
   --page-filter-btns-text: var(--bg--popover-contrast);
   --page-filter-btns-bg: radial-gradient(var(--bg--popover), white);
@@ -96,18 +117,6 @@ $palette_grey: hsl(0, 0%, 96%);
   --bg-kanban-card-shadow: #{$palette_theme-darker};
   --bg-kanban-col-drag: #{$palette_theme-lighter};
   --bg-kanban: transparent;
-  --kanban-div: white;
-  --kanban-border: white;
-}
-
-/*------------------------------------
-# small components
-------------------------------------*/
-:root {
-  --icons-regular: #{$palette_accent};
-  --icons-hover: #{$palette_accent-lighter};
-  --icons-size: 24px;
-
-  --checkmark-notdone-color: #{$palette_theme};
-  --checkmark-done-color: #{$palette_accent-lighter};
+  --kanban-div: #{setContrast($palette_theme)};
+  --kanban-border: #{setContrast($palette_theme)};
 }

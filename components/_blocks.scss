@@ -1,0 +1,55 @@
+/*------------------------------------
+# BLOCKS
+------------------------------------*/
+.rm-block,
+.roam-block,
+.rm-block-children,
+.roam-block-container {
+  --block-highlight-main: #{$palette_accent};
+  --block-highlight-linked: #{$palette_accent};
+  --block-highlight-linked-text: #{setContrast($palette_accent)};
+  --block-highlight-embed: #{$palette_accent-lighter};
+}
+
+.rm-block,
+.roam-block,
+.rm-block-children,
+.roam-block-container {
+  .rm-not-focused {
+    /* regular block */
+    background-color: transparent;
+  }
+  .rm-focused {
+    /* focused block */
+    /* i.e. when tyging inside */
+    padding: 0px;
+    // maybe style highlight child blocks too?
+    // & #{var(--rm-block-selector} {
+  }
+  .block-highlight-blue {
+    /* selected block in main edit area */
+    background-color: var(--block-highlight-main);
+  }
+  .block-highlight-yellow {
+    /* selected block in linked referenced */
+    background-color: var(--block-highlight-linked);
+    span {
+      color: var(--block-highlight-linked-text) !important;
+    }
+  }
+  .rm-embed-container {
+    /* embed block highlight */
+    background-color: var(--block-highlight-embed);
+  }
+}
+
+//TODO
+/*--- Block References ---*/
+// .rm-block-ref {
+//   /* linked refs */
+//   cursor: alias;
+//   border-bottom: 1px solid var(--block-ref-border-bottom);
+// }
+// .rm-block-ref:hover {
+//   background-color: var(--block-ref-hover-bg);
+// }

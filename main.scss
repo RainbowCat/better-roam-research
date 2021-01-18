@@ -1,7 +1,8 @@
 @use "sass:color";
-@use "utils";
-// @import "vars";
-@import "palettes/alok.scss";
+
+@import "palette";
+@import "utils";
+@import "vars";
 
 @import "./sections/general-workspace.scss";
 @import "./sections/topbar.scss";
@@ -12,6 +13,7 @@
 
 @import "./components/style.scss";
 @import "./components/typography.scss";
+@import "./components/blocks.scss";
 @import "./components/bullets.scss";
 @import "./components/tags.scss";
 

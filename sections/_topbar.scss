@@ -79,7 +79,7 @@
 
 /* make all elements look like a button */
 .roam-topbar .flex-h-box {
-  justify-content: center; // icons placement
+  justify-content: var(--icons-placement);
 
   > div,
   > span {
@@ -111,11 +111,8 @@
       cursor: pointer;
     }
     .bp3-icon-search.search-icon {
-      //   // background: red;
-      //   border-radius: 3px;
       padding: 4px;
       margin: 0px !important;
-      //   // pointer-events: hover;
     }
   }
 
@@ -130,18 +127,22 @@
   [class~="bp3-icon"],
   .bp3-button.bp3-minimal {
     &:before {
-      color: white;
+      color: var(--icon-color);
       background: transparent;
     }
+  }
+  .bp3-icon-filter,
+  .bp3-icon-search {
+    color: var(--icon-color) !important;
   }
   .rm-find-or-create-wrapper,
   [class~="bp3-icon"]:not(.bp3-icon-filter):not(.bp3-icon-search),
   .bp3-button.bp3-minimal {
     border-radius: 3px;
     transition: none;
-    background: var(--icons-regular) !important;
+    background: var(--icons-bg-regular) !important;
     &:hover {
-      background: var(--icons-hover) !important;
+      background: var(--icons-bg-hover) !important;
     }
   }
 }
